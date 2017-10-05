@@ -27,14 +27,20 @@ for pkt in packets:
 
 x = list()
 y = list()
+entropia = 0
 for s in S1_dict:
 	x.append(s)
 	probabilidad = S1_dict[s]/float(paquetes_S1)
 	informacion = -log(probabilidad, 2)
+	entropia += probabilidad*informacion
 	y.append(informacion)
+entropia_max = log(len(S1_dict), 2)
 
 ind = np.arange(len(S1_dict))
 fig, ax = plt.subplots()
 plt.bar(ind, y)
 plt.xticks(ind, x, rotation=30)
+plt.axhline(y=entropia, color='r', linestyle='-', label='Entropia muestral')
+plt.axhline(y=entropia_max, color='r', linestyle='-', label='Entropia maxima')
+plt.legend()
 plt.show()
