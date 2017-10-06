@@ -28,4 +28,5 @@ colors = ['palevioletred', 'mediumturquoise', 'gold', 'yellowgreen', 'lightcoral
 plt.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=140, colors=colors)
  
 plt.axis('equal')
-plt.show()
+plt.savefig('protocolos_s1.png', bbox_inches='tight', dpi=200)
+# plt.show()
