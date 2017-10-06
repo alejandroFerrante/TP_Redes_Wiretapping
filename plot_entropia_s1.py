@@ -20,9 +20,9 @@ paquetes_S1 = 0
 for pkt in packets:
     if 'type' in pkt.fields and 'dst' in pkt.fields:
         if pkt.dst == broadcast_address:
-            dict_add(S1_dict, '<broadcast, ' + types_dic[str(hex(pkt.type))] +'>')
+            dict_add(S1_dict, 'broadcast\n' + types_dic[str(hex(pkt.type))])
         else:
-            dict_add(S1_dict, '<unicast, ' + types_dic[str(hex(pkt.type))] +'>')
+            dict_add(S1_dict, 'unicast\n' + types_dic[str(hex(pkt.type))])
         paquetes_S1 += 1
 
 x = list()
@@ -39,8 +39,11 @@ entropia_max = log(len(S1_dict), 2)
 ind = np.arange(len(S1_dict))
 fig, ax = plt.subplots()
 plt.bar(ind, y)
-plt.xticks(ind, x, rotation=30)
-plt.axhline(y=entropia, color='r', linestyle='-', label='Entropia muestral')
-plt.axhline(y=entropia_max, color='r', linestyle='-', label='Entropia maxima')
+# plt.xticks(ind, x, rotation=30)
+plt.xticks(ind, x)
+plt.axhline(y=entropia, color='g', linestyle='-', label='Entropía muestral')
+plt.axhline(y=entropia_max, color='r', linestyle='-', label='Entropía máxima')
+plt.ylabel('Información')
+plt.xlabel('Símbolo')
 plt.legend()
 plt.show()
