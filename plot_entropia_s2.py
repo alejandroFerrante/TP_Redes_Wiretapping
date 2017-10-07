@@ -1,6 +1,5 @@
 import sys
 import matplotlib.pyplot as plt
-from types_dic import types_dic
 from scapy.all import rdpcap
 from math import log
 import numpy as np

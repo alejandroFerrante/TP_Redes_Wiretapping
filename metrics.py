@@ -1,15 +1,23 @@
 #! /usr/bin/env python
 
 import sys
-from types_dic import types_dic
 from scapy.all import rdpcap
 from math import log
+import pickle
 
 def dict_add(dic, key):
     if key in dic:
         dic[key] += 1
     else:
         dic[key] = 1
+
+def tipo(n):
+    if str(n) in types:
+        return types[str(n)]
+    else:
+        return str(hex(n))
+
+types = pickle.load(open('tipos.p', 'rb'))
 
 broadcast_address = 'ff:ff:ff:ff:ff:ff'
 ARP_type = 2054
@@ -47,17 +55,17 @@ if __name__ == '__main__':
                 paquetes_S2 += 1
 
     # Fuente S1
-    logfile.write('#' * 32 + " FUENTE S1 " + '#' * 33 + '\n')
-    logfile.write("{:^18} {:^30} {:^14} {:^12}".format("Broadcast/Unicast",
+    logfile.write('#' * 45 + " FUENTE S1 " + '#' * 45 + '\n')
+    logfile.write("{:^18} {:^55} {:^14} {:^12}".format("Broadcast/Unicast",
         "Protocolo", "Probabilidad", "Información") + '\n')
-    logfile.write('-' * 76 + '\n')
+    logfile.write('-' * 101 + '\n')
 
     entropia_muestral = 0
     for cast, protocol in S1_dict:
         probabilidad = S1_dict[(cast, protocol)]/float(paquetes_S1)
         informacion = -log(probabilidad, 2)
         entropia_muestral += probabilidad*informacion
-        logfile.write("{:^18} {:^30} {:^14} {:^12}".format(cast, types_dic[str(hex(protocol))],
+        logfile.write("{:^18} {:^55} {:^14} {:^12}".format(cast, tipo(protocol),
             "{0:.3f}".format(probabilidad), "{0:.3f}".format(informacion)) + '\n')
 
     entropia_maxima = log(len(S1_dict), 2)

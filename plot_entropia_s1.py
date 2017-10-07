@@ -1,6 +1,6 @@
 import sys
 import matplotlib.pyplot as plt
-from types_dic import types_dic
+import pickle
 from scapy.all import rdpcap
 from math import log
 import numpy as np
@@ -13,6 +13,14 @@ def dict_add(dic, key):
     else:
         dic[key] = 1
 
+def tipo(n):
+    if str(n) in types:
+        return types[str(n)]
+    else:
+        return str(hex(n))
+
+types = pickle.load(open('tipos.p', 'rb'))
+
 packets = rdpcap(sys.argv[1])
 S1_dict = dict()
 
@@ -20,9 +28,9 @@ paquetes_S1 = 0
 for pkt in packets:
     if 'type' in pkt.fields and 'dst' in pkt.fields:
         if pkt.dst == broadcast_address:
-            dict_add(S1_dict, 'broadcast\n' + types_dic[str(hex(pkt.type))])
+            dict_add(S1_dict, 'broadcast\n' + tipo(pkt.type))
         else:
-            dict_add(S1_dict, 'unicast\n' + types_dic[str(hex(pkt.type))])
+            dict_add(S1_dict, 'unicast\n' + tipo(pkt.type))
         paquetes_S1 += 1
 
 x = list()

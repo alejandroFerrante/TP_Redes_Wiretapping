@@ -1,7 +1,7 @@
 import sys
 import matplotlib.pyplot as plt
-from types_dic import types_dic
 from scapy.all import rdpcap
+import pickle
 
 def dict_add(dic, key):
     if key in dic:
@@ -9,12 +9,20 @@ def dict_add(dic, key):
     else:
         dic[key] = 1
 
+def tipo(n):
+    if str(n) in types:
+        return types[str(n)]
+    else:
+        return str(hex(n))
+
+types = pickle.load(open('tipos.p', 'rb'))
+
 packets = rdpcap(sys.argv[1])
 d = dict()
 
 for pkt in packets:
 	if 'type' in pkt.fields:
-	        dict_add(d, types_dic[str(hex(pkt.type))])
+	        dict_add(d, tipo(pkt.type))
 
 labels = list()
 sizes = list()
