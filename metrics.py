@@ -47,30 +47,42 @@ if __name__ == '__main__':
                 paquetes_S2 += 1
 
     # Fuente S1
-    logfile.write("## Fuente S1 ##\n")
-    logfile.write("Broadcast/Unicast | Protocolo | Probabilidad " +
-        "| Informacion\n\n")
+    logfile.write('#' * 32 + " FUENTE S1 " + '#' * 33 + '\n')
+    logfile.write("{:^18} {:^30} {:^14} {:^12}".format("Broadcast/Unicast",
+        "Protocolo", "Probabilidad", "Información") + '\n')
+    logfile.write('-' * 76 + '\n')
 
     entropia_muestral = 0
     for cast, protocol in S1_dict:
         probabilidad = S1_dict[(cast, protocol)]/float(paquetes_S1)
         informacion = -log(probabilidad, 2)
         entropia_muestral += probabilidad*informacion
-        logfile.write(cast + " | " + types_dic[str(hex(protocol))] +
-            " | " + "{0:.3f}".format(probabilidad) + " | " +
-            "{0:.3f}".format(informacion) + "\n")
+        logfile.write("{:^18} {:^30} {:^14} {:^12}".format(cast, types_dic[str(hex(protocol))],
+            "{0:.3f}".format(probabilidad), "{0:.3f}".format(informacion)) + '\n')
 
     entropia_maxima = log(len(S1_dict), 2)
 
-    logfile.write("\n# Entropia muestral = " +
-        "{0:.3f}".format(entropia_muestral))
-    logfile.write("\n# Entropia maxima = " + "{0:.3f}".format(entropia_maxima))
+    logfile.write("\n# Entropía muestral = " +
+        "{0:.3f}".format(entropia_muestral) + '\n')
+    logfile.write("# Entropía máxima = " + "{0:.3f}".format(entropia_maxima) + '\n\n')
 
     # Fuente S2
-    logfile.write("\n\n## Fuente S2 ##\n")
-    logfile.write("IP buscada | Cantidad de paquetes\n\n")
+    logfile.write('#' * 16 + " FUENTE S2 " + '#' * 16 + '\n')
+    logfile.write("{:^16} {:^14} {:^12}".format("IP emisora", "Probabilidad", "Información") + '\n')
+    logfile.write('-' * 43 + '\n')
 
+    entropia_muestral = 0
     for ip in S2_dict:
-        logfile.write(ip + " | " + str(S2_dict[ip]) + "\n")
+        probabilidad = S2_dict[ip]/float(paquetes_S2)
+        informacion = -log(probabilidad, 2)
+        entropia_muestral += probabilidad*informacion
+        logfile.write("{:^16} {:^14} {:^12}".format(ip, "{0:.3f}".format(probabilidad),
+            "{0:.3f}".format(informacion)) + "\n")
+
+    entropia_maxima = log(len(S2_dict), 2)
+
+    logfile.write("\n# Entropía muestral = " +
+        "{0:.3f}".format(entropia_muestral) + '\n')
+    logfile.write("# Entropía máxima = " + "{0:.3f}".format(entropia_maxima) + '\n\n')
 
     logfile.close()
