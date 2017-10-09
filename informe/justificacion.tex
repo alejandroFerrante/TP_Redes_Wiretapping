@@ -2,6 +2,6 @@
 
 El objetivo de la fuente S2 es poder distinguir a los hosts de cada red, usando las IP dentro de los paquetes ARP capturados. Propusimos un modelo en el cual los símbolos son las IPs de los emisores de paquetes ARP del tipo who-has. Esto nos permite distinguir entre hosts comunes y routers, ya que esperamos que los routers envíen muchos más requests de ARP que el resto de los dispositivos conectados.
 
-Elegimos el request de ARP y no el reply porque consideramos que este nos brindaría la misma información pero en menor cantidad (porque se envía en modo unicast). En este caso la dirección que nos importaría sería la de destino, la cual la mayoría de las veces pertenecería a routers.
+% Elegimos el request de ARP y no el reply porque consideramos que este nos brindaría la misma información pero en menor cantidad (porque se envía en modo unicast). En este caso la dirección que nos importaría sería la de destino, la cual la mayoría de las veces pertenecería a routers.
 
 %% me parece que esto esta horrible
