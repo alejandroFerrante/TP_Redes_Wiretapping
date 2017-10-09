@@ -6,17 +6,24 @@ El experimento fue realizado en una red de FibertelZone, por medio de una conexi
 
 \subsection{Descripción de la captura}
 
-Capturamos 12000 paquetes. 
+Capturamos 12000 paquetes. En la figura~\ref{protocolos1} se muestra la distribución de los protocolos en la red. Observamos que la mayoría de los paquetes son de tipo IPv4, otros son de tipo \texttt{0x86dd} (IPv6) y la minoría son de ARP.
+
+Los paquetes de tipo IPv4 e IPv6 usan distintas versiones del protocolo IP. Los paquetes de tipo ARP son los usados por los hosts de una red para obtener direcciones MAC de otros dispositivos, a partir de su IP.
+
+Esto es consistente, ya que la mayoría de los dispositivos usan IPv4/IPv6 para conectarse a Internet, y el porcentaje de paquetes ARP es considerable al haber muchos dispositivos conectados al mismo tiempo.
 
 %% distribucion de protocolos (grafico)
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{protocolosRed1.png}
 \caption{Gráfico que muestra la distribución de protocolos en la red.}
-\label{broadcast2}
+\label{protocolos1}
 \end{figure}
 
-%% grafico de broadcast
+En la figura~\ref{broadcast1} podemos ver el porcentaje de paquetes broadcast comparado con el total de paquetes. Vemos que esto representa un 16\% del total. En la figura~\ref{entropias1_1} vemos que los protocolos que aparecen en los paquetes de broadcast son ARP e IPv4. En cuanto a ARP, estos paquetes son los del tipo who-is, que mediante broadcast llegan al nodo cuya IP busca el emisor. 
+
+%%% Y QUE PASA CON IPV4 BROADCAST?
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{broadcastRed1.png}
@@ -26,23 +33,22 @@ Capturamos 12000 paquetes.
 
 \subsection{Análisis de la captura}
 
-%% grafico entropia S1
+Realizamos el modelado de la fuente $S_1$ según el enunciado. En la figura~\ref{entropias1_1} se encuentra el gráfico de la información de cada símbolo. Cuanta más información tenga un símbolo, quiere decir que es menos probable que aparezca. En esta red particular el símbolo con más información es representado por los paquetes unicast de tipo ARP. Estos paquetes son los is-at, las respuestas a los who-has. Tiene sentido ya que mientras que el request de ARP se hace mediante broadcast (o sea, mandando muchos paquetes), el reply es unicast (menos paquetes).
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{entropiaS1Red1.png}
 \caption{Gráfico de la información de los símbolos de la fuente $S_1$ observados en esta red. Se muestra la entropía muestral de $S_1$ y su entropía máxima.}
-\label{entropias1_2}
+\label{entropias1_1}
 \end{figure}
 
-%% grafico entropia S2
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{entropiaS2Red1.png}
 \caption{Gráfico de la información de los símbolos de la fuente $S_2$ observados en esta red. Se muestra la entropía muestral de $S_2$ y su entropía máxima.}
-\label{entropias2_2}
+\label{entropias2_1}
 \end{figure}
 
-%% red ARP
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{grafoRed1.png}
