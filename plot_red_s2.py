@@ -57,3 +57,4 @@ for ip1, ip2 in mensajes:
 # plt.show()
 
 write_dot(G,'graph.dot')
+#### dot -Tpng -Kfdp graph.dot > graph.png

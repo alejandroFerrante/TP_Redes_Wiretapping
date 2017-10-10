@@ -27,5 +27,5 @@ else:
 		autopct='%1.1f%%', shadow=True, startangle=140, colors=colors)
 
 plt.axis('equal')
-plt.savefig('broadcastRed1.png', bbox_inches='tight', dpi=200)
+plt.savefig('broadcastRed4.png', bbox_inches='tight', dpi=200)
 # plt.show()

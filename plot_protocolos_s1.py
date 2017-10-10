@@ -55,4 +55,4 @@ if sort_legend:
 plt.legend(patches, labels, loc='center left', bbox_to_anchor=(-0.1, 1.),
            fontsize=8)
 # plt.show()
-plt.savefig('protocolosRed2.png', bbox_inches='tight', dpi=200)
+plt.savefig('protocolosRed4.png', bbox_inches='tight', dpi=200)
