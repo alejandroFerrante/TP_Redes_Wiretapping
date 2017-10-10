@@ -2,12 +2,13 @@
 
 \subsection{Descripción del contexto}
 
-El experimento fue realizado en una red doméstica, por medio de una conexión Wi-Fi de Fibertel. Al momento de tomar las mediciones estaban conectados a la red una laptop, una smart TV, un celular y una tablet, entre otras cosas. La fecha de la captura fue Sábado 7 de Octubre de 2017.
+El experimento fue realizado en una red doméstica, por medio de una conexión Wi-Fi de Fibertel. Al momento de tomar las mediciones estaban conectados a la red una laptop, una smart TV, un celular y una tablet, entre otras cosas. La fecha de la captura fue Sábado 7 de Octubre de 2017. El celular estaba siendo usado para controlar el programa VLC por remoto.
 
 \subsection{Descripción de la captura}
 
 %% distribucion de protocolos (grafico)
-Capturamos 10000 paquetes. A continuación se muestra la distribución de protocolos dentro de la captura.
+Capturamos 10000 paquetes. En la figura~\ref{protocolos2} se muestra la distribución de protocolos dentro de la captura. Observamos que hay paquetes de tipo IPv4, \texttt{0x86dd} (IPv6), ARP y también Fast Roaming Internet Request. Este último es un protocolo que permite la comunicación continua con dispositivos en movimiento. 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{protocolosRed2.png}
@@ -15,7 +16,6 @@ Capturamos 10000 paquetes. A continuación se muestra la distribución de protoc
 \label{protocolos2}
 \end{figure}
 
-Observamos 4 tipos de paquetes distintos, la mayoría de los cuales son de tipo IPv4. Además, hay BLA\% de paquetes ARP.
 %% grafico de broadcast
 \begin{figure}[H]
 \centering
