@@ -1,4 +1,4 @@
-metrics.py: para generar las tablas de S1 y S2
+metrics.py: para generar las tablas de S1 y S2 (usa tipos.p)
 
 	python3 metrics.py <direccion del .pcap>
 
