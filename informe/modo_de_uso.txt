@@ -1,0 +1,7 @@
+metrics.py: para generar las tablas de S1 y S2
+
+	python3 metrics.py <direccion del .pcap>
+
+sniff2.py: para medir
+
+	sudo python3 sniff2.py <nombre de la red>  <cantidad de tramas>
