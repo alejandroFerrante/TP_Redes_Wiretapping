@@ -6,7 +6,6 @@ El experimento fue realizado en una red doméstica, por medio de una conexión W
 
 \subsection{Descripción de la captura}
 
-%% distribucion de protocolos (grafico)
 Capturamos 10000 paquetes. En la figura~\ref{protocolos2} se muestra la distribución de protocolos dentro de la captura. Observamos que hay paquetes de tipo IPv4, \texttt{0x86dd} (IPv6), ARP y también Fast Roaming Internet Request. Este último es un protocolo que permite la comunicación continua con dispositivos en movimiento. 
 
 \begin{figure}[H]
@@ -16,7 +15,8 @@ Capturamos 10000 paquetes. En la figura~\ref{protocolos2} se muestra la distribu
 \label{protocolos2}
 \end{figure}
 
-%% grafico de broadcast
+En la figura~\ref{broadcast2} podemos ver el porcentaje de paquetes broadcast comparado con el total de paquetes. Vemos que esto representa un 1,8\% del total. En la figura~\ref{entropias1_2} vemos que los protocolos que aparecen en los paquetes de broadcast son ARP e IPv4. El porcentaje de broadcast es mucho menor al de la primer red porque hay menos dispositivos en uso.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{broadcastRed2.png}
@@ -26,7 +26,8 @@ Capturamos 10000 paquetes. En la figura~\ref{protocolos2} se muestra la distribu
 
 \subsection{Análisis de la captura}
 
-%% grafico entropia S1
+En la figura~\ref{entropias1_2} se encuentra la información de cada símbolo de la fuente $S_1$ para esta red. Observamos que hay un símbolo cuya información es muy baja en comparación con la de los demás (IPv4, unicast); y esto hace que la entropía muestral sea mucho menor a la máxima.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{entropiaS1Red2.png}
@@ -34,7 +35,8 @@ Capturamos 10000 paquetes. En la figura~\ref{protocolos2} se muestra la distribu
 \label{entropias1_2}
 \end{figure}
 
-%% grafico entropia S2
+En el caso de la fuente $S_2$, como podemos ver en la figura~\ref{entropias2_2}, hay dos IPs particulares que aportan menos información que las otras, esto significa que es más común que envíen requests de ARP. En este caso, al aportar todos los símbolos aproximadamente la misma información, la entropía muestral se encuentra cerca de la máxima.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{entropiaS2Red2.png}
@@ -42,7 +44,8 @@ Capturamos 10000 paquetes. En la figura~\ref{protocolos2} se muestra la distribu
 \label{entropias2_2}
 \end{figure}
 
-%% red ARP
+Graficamos la red subyacente de mensajes ARP en la figura~\ref{grafo2}. Los nodos representan a los hosts y las aristas los mensajes ARP de los dos tipos. No observamos ningún nodo particularmente distinguido.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{grafoRed2.png}
