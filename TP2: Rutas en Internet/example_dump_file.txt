@@ -1,0 +1,33 @@
+[
+{'rtt': 0.000299, 'ip_adress': ' 192.168.0.1 ', 'hop_num': 1}
+{'rtt': None, 'hop_num': 2, 'ip_adress': None, 'salto_intercontinental': None}
+{'rtt': None, 'hop_num': 3, 'ip_adress': None, 'salto_intercontinental': None}
+{'rtt': None, 'hop_num': 4, 'ip_adress': None, 'salto_intercontinental': None}
+{'rtt': None, 'hop_num': 5, 'ip_adress': None, 'salto_intercontinental': None}
+{'rtt': 0.016075, 'ip_adress': ' 200.89.160.25 ', 'hop_num': 6}
+{'rtt': 0.016306, 'ip_adress': ' 200.89.165.129 ', 'hop_num': 7}
+{'rtt': 0.018425, 'ip_adress': ' 200.89.165.150 ', 'hop_num': 8}
+{'rtt': 0.012632, 'ip_adress': ' 185.70.203.20 ', 'hop_num': 9}
+{'rtt': 0.039932, 'ip_adress': ' 195.22.219.73 ', 'hop_num': 10}
+{'rtt': 0.039701, 'ip_adress': ' 149.3.181.107 ', 'hop_num': 11}
+{'rtt': 0.040121, 'ip_adress': ' 31.13.28.247 ', 'hop_num': 12}
+{'rtt': 0.041068, 'ip_adress': ' 31.13.31.99 ', 'hop_num': 13}
+{'rtt': 0.039964, 'ip_adress': ' 173.252.67.83 ', 'hop_num': 14}
+{'rtt': 0.043704, 'ip_adress': ' 31.13.85.36 ', 'hop_num': 15}
+
+] 
+ 
+ Global Average: 0.028020477294921877 
+ Global Standard Deviation: 0.014650091105769189 
+ Global Standard Values:
+-1.8922408193
+-0.815410067379
+-0.799603746225
+-0.654985468762
+-1.05043317845
+0.813059258534
+0.797278162397
+0.825967957571
+0.890618862504
+0.815239188231
+1.07050985087
