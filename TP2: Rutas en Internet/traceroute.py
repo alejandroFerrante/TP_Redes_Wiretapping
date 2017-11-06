@@ -7,8 +7,8 @@ import math
 def main():
 	#Initialize Variables
 	target_url = sys.argv[1]
-	burst_size = 20
-	max_ttl = 30
+	burst_size = int(sys.argv[3]) #50
+	max_ttl = int(sys.argv[4]) #30
 	dump_file = open(sys.argv[2], 'w')
 	echoReplyNotFound = True
 	current_ttl = 1
@@ -24,6 +24,8 @@ def main():
 	global_standard_deviation = 0
 	global_standard_deviation_acum = 0
 	global_rtt_samples = []
+	global_null_packets_amount = 0.0
+	global_total_packets_amount = 0.0
 	
 	standard_values = []
 	
@@ -51,7 +53,7 @@ def main():
 			if(received.type == 0):
 				echoReplyNotFound = False
     
-
+    
 		if rtt_counter > 0 :
 		  rtt_average = rtt_acum / rtt_counter
 		
@@ -76,7 +78,10 @@ def main():
 		    "hop_num" : current_ttl
 		    
 		  }  
+		  global_null_packets_amount = global_null_packets_amount +1
 		
+		
+		global_total_packets_amount = global_total_packets_amount +1  
 		result_per_ttl.append(data_object)
 
 		current_ttl += 1
@@ -114,6 +119,9 @@ def main():
 	for z_value in standard_values:
 	  dump_file.write("%s\n" % z_value)
     
+	dump_file.write(' \n % null Packets:\n')
+	dump_file.write(str( round(global_null_packets_amount / global_total_packets_amount , 2)))
+	
 	dump_file.close()
 
 if __name__ == "__main__":
