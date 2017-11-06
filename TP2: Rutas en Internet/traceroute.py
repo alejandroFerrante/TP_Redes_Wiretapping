@@ -60,7 +60,9 @@ def main():
 		  data_object = {
 		    "rtt" : round(rtt_average , 6),
 		    "ip_adress" : ' '+str(adresses.most_common(1)[0][0])+' ',
-		    "hop_num" : current_ttl
+            "salto_intercontinental" : False,
+		    "hop_num" : current_ttl,
+
 		    
 		  }
 		  
@@ -74,7 +76,7 @@ def main():
 		  data_object = {
 		    "rtt" : None,
 		    "ip_adress" : None,
-		    "salto_intercontinental" : None,
+		    "salto_intercontinental" : False,
 		    "hop_num" : current_ttl
 		    
 		  }  
