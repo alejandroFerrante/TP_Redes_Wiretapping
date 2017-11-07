@@ -1,5 +1,5 @@
 from scapy.all import *
-from collections import Counter
+# from collections import Counter
 import sys
 import json
 import math
@@ -7,9 +7,9 @@ import math
 def main():
 	#Initialize Variables
 	target_url = sys.argv[1]
+	dump_file = open(sys.argv[2], 'w')
 	burst_size = int(sys.argv[3]) #50
 	max_ttl = int(sys.argv[4]) #30
-	dump_file = open(sys.argv[2], 'w')
 	echoReplyNotFound = True
 	current_ttl = 1
 	
@@ -29,58 +29,68 @@ def main():
 	
 	standard_values = []
 	
-	adresses = Counter() #used to check on every iteration the most common Ip adress
+	# adresses = Counter() #used to check on every iteration the most common Ip adress
+	addresses = dict()
 	
 	result_per_ttl = []
-  #
 
 	while echoReplyNotFound and max_ttl > current_ttl:
-    
-    #Send packet	
+		#Send packet	
 		response, unans = sr( IP(dst=target_url,ttl=current_ttl)/ICMP()*burst_size, timeout = 1, verbose = 0)
-    
-    #Get RTT Average
+	
+		count = 0
+		#Get RTT Average
 		for (sent, received) in response:
 			
 			#Increase recieved adresses counter for this Ip
-			adresses[received.src] += 1
+			# adresses[received.src] += 1
+			if received.src in addresses:
+				addresses[received.src][0] += received.time - sent.sent_time
+				addresses[received.src][1] += 1
+			else:
+				addresses[received.src][0] = received.time - sent.sent_time
+				addresses[received.src][1] = 1
+
+			if addresses[received.src][1] > count:
+				count = addresses[received.src]
+				most_common_ip = received.src
 			
 			#Increment RTT counter
-			rtt_acum += (received.time - sent.sent_time)
-			rtt_counter += 1
+			# rtt_acum += (received.time - sent.sent_time)
+			# rtt_counter += 1
 			
 			#Set flacg if echo-reply
 			if(received.type == 0):
 				echoReplyNotFound = False
-    
-    
-		if rtt_counter > 0 :
-		  rtt_average = rtt_acum / rtt_counter
+	
+	
+		# if rtt_counter > 0 :
+		#   rtt_average = rtt_acum / rtt_counter
+		if count > 0:
+			rtt_average = addresses[most_common_ip][0]/addresses[most_common_ip][1]
 		
-		  data_object = {
-		    "rtt" : round(rtt_average , 6),
-		    "ip_adress" : ' '+str(adresses.most_common(1)[0][0])+' ',
-            "salto_intercontinental" : False,
-		    "hop_num" : current_ttl,
+			data_object = {
+				"rtt" : round(rtt_average , 6),
+				# "ip_address" : ' '+str(adresses.most_common(1)[0][0])+' ',
+				"ip_address" : ' '+str(most_common_ip[0][0])+' ',
+				"salto_intercontinental" : False,
+				"hop_num" : current_ttl
 
-		    
-		  }
-		  
-		  
-		  global_rtt_acum    += rtt_average
-		  global_rtt_counter += 1
-		  global_rtt_samples.append(rtt_average) 
-	    
-		  
+				
+			}
+		
+			global_rtt_acum    += rtt_average
+			global_rtt_counter += 1
+			global_rtt_samples.append(rtt_average) 
+		
 		else:
-		  data_object = {
-		    "rtt" : None,
-		    "ip_adress" : None,
-		    "salto_intercontinental" : False,
-		    "hop_num" : current_ttl
-		    
-		  }  
-		  global_null_packets_amount = global_null_packets_amount +1
+			data_object = {
+				"rtt" : None,
+				"ip_address" : None,
+				"salto_intercontinental" : False,
+				"hop_num" : current_ttl
+			}  
+			global_null_packets_amount = global_null_packets_amount +1
 		
 		
 		global_total_packets_amount = global_total_packets_amount +1  
@@ -120,11 +130,11 @@ def main():
 	dump_file.write(' \n Global Standard Values:\n')
 	for z_value in standard_values:
 	  dump_file.write("%s\n" % z_value)
-    
+	
 	dump_file.write(' \n % null Packets:\n')
 	dump_file.write(str( round(global_null_packets_amount / global_total_packets_amount , 2)))
 	
 	dump_file.close()
 
 if __name__ == "__main__":
-    main()
+	main()
