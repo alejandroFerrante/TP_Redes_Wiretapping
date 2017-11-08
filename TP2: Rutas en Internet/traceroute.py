@@ -76,7 +76,7 @@ def main():
 	i = 0
 	while final_data[i].ip is None and i < len(final_data):
 		i += 1
-	final_data[i].rtt_diff = 0
+	final_data[i].rtt_diff = final_data[i].avg_rtt
 
 	common_hops = [d for d in final_data if d.ip is not None]
 	other_hops = [d for d in final_data if d.ip is None]	# (nulos y saltos intercontinentales)
