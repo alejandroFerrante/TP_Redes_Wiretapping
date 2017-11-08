@@ -1,0 +1,139 @@
+www.ug.edu.gh
+
+[
+  {
+    "rtt": 0.02315015637356302,
+    "ip_address": "192.168.0.1",
+    "salto_intercontinental": true,
+    "hop_num": 1
+    BUENOS AIRES
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 2
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 3
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 4
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 5
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 6
+  },
+  {
+    "rtt": 0.29301823811097577,
+    "ip_address": "200.89.165.130",
+    "salto_intercontinental": true,
+    "hop_num": 7
+    BUENOS AIRES
+  },
+  {
+    "rtt": 0.158880717045552,
+    "ip_address": "200.89.165.222",
+    "salto_intercontinental": true,
+    "hop_num": 8
+    BUENOS AIRES
+  },
+  {
+    "rtt": 0.16931198270697342,
+    "ip_address": "185.70.203.32",
+    "salto_intercontinental": true,
+    "hop_num": 9
+    BUENOS AIRES
+  },
+  {
+    "rtt": 0.2927394018068418,
+    "ip_address": "195.22.199.185",
+    "salto_intercontinental": true,
+    "hop_num": 10
+    ESTADOS UNIDOS, VIRGINIA, ASHBURN
+  },
+  {
+    "rtt": 0.19959699573801526,
+    "ip_address": "216.6.87.202",
+    "salto_intercontinental": true,
+    "hop_num": 11
+    ESTADOS UNIDOS, VIRGINIA, ASHBURN
+  },
+  {
+    "rtt": 0.659011994089399,
+    "ip_address": "216.6.87.105",
+    "salto_intercontinental": true,
+    "hop_num": 12
+    UK, LONDRES
+  },
+  {
+    "rtt": 0.3755183269580205,
+    "ip_address": "80.231.130.130",
+    "salto_intercontinental": true,
+    "hop_num": 13
+    UK, LONDRES
+  },
+  {
+    "rtt": 0.4624703413731343,
+    "ip_address": "80.231.76.85",
+    "salto_intercontinental": false,
+    "hop_num": 14
+    UK, LONDRES
+  },
+  {
+    "rtt": 1.0908968231894753,
+    "ip_address": "195.219.195.42",
+    "salto_intercontinental": true,
+    "hop_num": 15
+    SINGAPUR, SINGAPUR
+  },
+  {
+    "rtt": 0.3648479461669922,
+    "ip_address": "41.204.60.149",
+    "salto_intercontinental": true,
+    "hop_num": 16
+    Ghana, Ashanti, Kumasi
+  },
+  {
+    "rtt": 0.4641834497451782,
+    "ip_address": "41.204.60.150",
+    "salto_intercontinental": false,
+    "hop_num": 17
+    Ghana, Ashanti, Kumasi
+  },
+  {
+    "rtt": 0.39289748668670654,
+    "ip_address": "197.255.127.6",
+    "salto_intercontinental": true,
+    "hop_num": 18
+    Ghana, Greater Accra, Accra
+  },
+  {
+    "rtt": 0.7883861064910889,
+    "ip_address": "197.255.127.35",
+    "salto_intercontinental": true,
+    "hop_num": 19
+    Ghana, Greater Accra, Accra
+  },
+  {
+    "rtt": 0.41284019947052003,
+    "ip_address": "197.255.125.213",
+    "salto_intercontinental": true,
+    "hop_num": 20
+    Ghana, Greater Accra, Accra
+  }
+]

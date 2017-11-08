@@ -1,0 +1,158 @@
+www.u-tokyo.ac.jp
+
+[
+  {
+    "rtt": 0.020071242984972502,
+    "ip_address": "192.168.0.1",
+    "salto_intercontinental": true,
+    "hop_num": 1
+    BUENOS AIRES
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 2
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 3
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 4
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 5
+  },
+  {
+    "rtt": 0.07424725488174794,
+    "ip_address": "200.89.161.85",
+    "salto_intercontinental": false,
+    "hop_num": 6
+    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
+  },
+  {
+    "rtt": 0.03699378086173016,
+    "ip_address": "200.89.165.197",
+    "salto_intercontinental": true,
+    "hop_num": 7
+    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
+  },
+  {
+    "rtt": 0.04346095479053,
+    "ip_address": "200.89.165.222",
+    "salto_intercontinental": true,
+    "hop_num": 8
+    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
+  },
+  {
+    "rtt": 0.02192910263935725,
+    "ip_address": "185.70.203.32",
+    "salto_intercontinental": true,
+    "hop_num": 9
+    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
+  },
+  {
+    "rtt": 0.06048880993051732,
+    "ip_address": "195.22.219.3",
+    "salto_intercontinental": true,
+    "hop_num": 10
+    Italy, Lombardia, San Paolo
+  },
+  {
+    "rtt": 0.1129073625082498,
+    "ip_address": "149.3.181.65",
+    "salto_intercontinental": false,
+    "hop_num": 11
+    Brazil, Sao Paulo, Sao Paulo
+  },
+  {
+    "rtt": 0.17000439292506167,
+    "ip_address": "129.250.2.227",
+    "salto_intercontinental": true,
+    "hop_num": 12
+    United States, New York, New York City
+  },
+  {
+    "rtt": 0.2852083534322759,
+    "ip_address": "129.250.4.13",
+    "salto_intercontinental": true,
+    "hop_num": 13
+    United States, Washington, Seattle
+  },
+  {
+    "rtt": 0.49432093153397244,
+    "ip_address": "129.250.2.54",
+    "salto_intercontinental": true,
+    "hop_num": 14
+    United States, Washington, Seattle
+  },
+  {
+    "rtt": 0.42420270366053425,
+    "ip_address": "129.250.3.61",
+    "salto_intercontinental": true,
+    "hop_num": 15
+    Japan, Osaka, Osaka
+  },
+  {
+    "rtt": 0.9055390207391036,
+    "ip_address": "129.250.5.41",
+    "salto_intercontinental": true,
+    "hop_num": 16
+    Japan, Osaka, Osaka
+  },
+  {
+    "rtt": 0.6164713529023257,
+    "ip_address": "129.250.3.106",
+    "salto_intercontinental": true,
+    "hop_num": 17
+    Japan, Osaka, Osaka
+  },
+  {
+    "rtt": 0.37772628435721767,
+    "ip_address": "61.200.80.218",
+    "salto_intercontinental": true,
+    "hop_num": 18
+    Japan, Osaka, Osaka
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 19
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 20
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 21
+  },
+  {
+    "rtt": 0.35222768276295763,
+    "ip_address": "154.34.240.254",
+    "salto_intercontinental": true,
+    "hop_num": 22
+     Japan, Tokyo, Tokyo
+  },
+  {
+    "rtt": 0.4735599548920341,
+    "ip_address": "210.152.135.178",
+    "salto_intercontinental": true,
+    "hop_num": 23
+    Japan, Tokyo, Tokyo
+  }
+]
