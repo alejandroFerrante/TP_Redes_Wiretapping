@@ -156,3 +156,147 @@ www.u-tokyo.ac.jp
     Japan, Tokyo, Tokyo
   }
 ]
+
+otro:
+
+[
+  {
+    "hop_num": 1,
+    "rtt": 0.01844925068794413,
+    "salto_intercontinental": true,
+    "ip_address": "10.2.203.254"
+  },
+  {
+    "hop_num": 2,
+    "rtt": 0.007432460784912109,
+    "salto_intercontinental": true,
+    "ip_address": "157.92.18.99"
+  },
+  {
+    "hop_num": 3,
+    "rtt": null,
+    "salto_intercontinental": null,
+    "ip_address": null
+  },
+  {
+    "hop_num": 4,
+    "rtt": 0.04392809097212975,
+    "salto_intercontinental": true,
+    "ip_address": "157.92.47.98"
+  },
+  {
+    "hop_num": 5,
+    "rtt": null,
+    "salto_intercontinental": null,
+    "ip_address": null
+  },
+  {
+    "hop_num": 6,
+    "rtt": null,
+    "salto_intercontinental": null,
+    "ip_address": null
+  },
+  {
+    "hop_num": 7,
+    "rtt": 0.03066504974754489,
+    "salto_intercontinental": true,
+    "ip_address": "131.100.186.98"
+  },
+  {
+    "hop_num": 8,
+    "rtt": 0.03846753028131301,
+    "salto_intercontinental": true,
+    "ip_address": "131.100.186.114"
+  },
+  {
+    "hop_num": 9,
+    "rtt": 0.16325063066384227,
+    "salto_intercontinental": true,
+    "ip_address": "185.70.203.24"
+  },
+  {
+    "hop_num": 10,
+    "rtt": 0.16291649562796368,
+    "salto_intercontinental": true,
+    "ip_address": "195.22.219.145"
+  },
+  {
+    "hop_num": 11,
+    "rtt": 0.1563756912946701,
+    "salto_intercontinental": true,
+    "ip_address": "149.3.181.65"
+  },
+  {
+    "hop_num": 12,
+    "rtt": 0.21779812979943974,
+    "salto_intercontinental": true,
+    "ip_address": "129.250.2.227"
+  },
+  {
+    "hop_num": 13,
+    "rtt": 0.25320938263816395,
+    "salto_intercontinental": true,
+    "ip_address": "129.250.4.13"
+  },
+  {
+    "hop_num": 14,
+    "rtt": 0.42624775020555516,
+    "salto_intercontinental": true,
+    "ip_address": "129.250.2.54"
+  },
+  {
+    "hop_num": 15,
+    "rtt": 0.4781699326573586,
+    "salto_intercontinental": true,
+    "ip_address": "129.250.3.61"
+  },
+  {
+    "hop_num": 16,
+    "rtt": 0.5022118738719396,
+    "salto_intercontinental": true,
+    "ip_address": "129.250.5.41"
+  },
+  {
+    "hop_num": 17,
+    "rtt": 0.3791523233373114,
+    "salto_intercontinental": true,
+    "ip_address": "129.250.3.106"
+  },
+  {
+    "hop_num": 18,
+    "rtt": 0.3809922456741333,
+    "salto_intercontinental": true,
+    "ip_address": "61.200.80.218"
+  },
+  {
+    "hop_num": 19,
+    "rtt": null,
+    "salto_intercontinental": null,
+    "ip_address": null
+  },
+  {
+    "hop_num": 20,
+    "rtt": null,
+    "salto_intercontinental": null,
+    "ip_address": null
+  },
+  {
+    "hop_num": 21,
+    "rtt": null,
+    "salto_intercontinental": null,
+    "ip_address": null
+  },
+  {
+    "hop_num": 22,
+    "rtt": 0.3694683380341262,
+    "salto_intercontinental": false,
+    "ip_address": "154.34.240.254"
+  },
+  {
+    "hop_num": 23,
+    "rtt": 0.35769486170943066,
+    "salto_intercontinental": false,
+    "ip_address": "210.152.135.178"
+  }
+]
+

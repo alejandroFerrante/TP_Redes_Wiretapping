@@ -137,3 +137,141 @@ www.ug.edu.gh
     Ghana, Greater Accra, Accra
   }
 ]
+
+otra:
+
+[
+  {
+    "hop_num": 1,
+    "salto_intercontinental": true,
+    "ip_address": "10.2.203.254",
+    "rtt": 0.12702069171639377
+  },
+  {
+    "hop_num": 2,
+    "salto_intercontinental": true,
+    "ip_address": "157.92.18.99",
+    "rtt": 0.01102595618276885
+  },
+  {
+    "hop_num": 3,
+    "salto_intercontinental": null,
+    "ip_address": null,
+    "rtt": null
+  },
+  {
+    "hop_num": 4,
+    "salto_intercontinental": true,
+    "ip_address": "157.92.47.98",
+    "rtt": 0.4559074266992434
+  },
+  {
+    "hop_num": 5,
+    "salto_intercontinental": null,
+    "ip_address": null,
+    "rtt": null
+  },
+  {
+    "hop_num": 6,
+    "salto_intercontinental": null,
+    "ip_address": null,
+    "rtt": null
+  },
+  {
+    "hop_num": 7,
+    "salto_intercontinental": true,
+    "ip_address": "131.100.186.98",
+    "rtt": 0.08762101123207494
+  },
+  {
+    "hop_num": 8,
+    "salto_intercontinental": true,
+    "ip_address": "131.100.186.114",
+    "rtt": 0.07102815494980923
+  },
+  {
+    "hop_num": 9,
+    "salto_intercontinental": true,
+    "ip_address": "64.86.28.73",
+    "rtt": 0.3112711390269171
+  },
+  {
+    "hop_num": 10,
+    "salto_intercontinental": true,
+    "ip_address": "66.198.154.177",
+    "rtt": 0.559313776618556
+  },
+  {
+    "hop_num": 11,
+    "salto_intercontinental": true,
+    "ip_address": "216.6.87.1",
+    "rtt": 0.42367741308714213
+  },
+  {
+    "hop_num": 12,
+    "salto_intercontinental": true,
+    "ip_address": "216.6.87.169",
+    "rtt": 0.33659348885218304
+  },
+  {
+    "hop_num": 13,
+    "salto_intercontinental": true,
+    "ip_address": "216.6.57.1",
+    "rtt": 0.5040333521993536
+  },
+  {
+    "hop_num": 14,
+    "salto_intercontinental": false,
+    "ip_address": "80.231.130.33",
+    "rtt": 0.5321025361820143
+  },
+  {
+    "hop_num": 15,
+    "salto_intercontinental": true,
+    "ip_address": "80.231.130.130",
+    "rtt": 0.6768242437628251
+  },
+  {
+    "hop_num": 16,
+    "salto_intercontinental": true,
+    "ip_address": "80.231.76.85",
+    "rtt": 0.5521179188738813
+  },
+  {
+    "hop_num": 17,
+    "salto_intercontinental": true,
+    "ip_address": "195.219.195.42",
+    "rtt": 0.6968132478219492
+  },
+  {
+    "hop_num": 18,
+    "salto_intercontinental": true,
+    "ip_address": "41.204.60.149",
+    "rtt": 0.697303113937378
+  },
+  {
+    "hop_num": 19,
+    "salto_intercontinental": true,
+    "ip_address": "41.204.60.150",
+    "rtt": 0.45890586016929313
+  },
+  {
+    "hop_num": 20,
+    "salto_intercontinental": true,
+    "ip_address": "197.255.127.6",
+    "rtt": 0.40393710136413574
+  },
+  {
+    "hop_num": 21,
+    "salto_intercontinental": false,
+    "ip_address": "197.255.127.43",
+    "rtt": 0.42772233486175537
+  },
+  {
+    "hop_num": 22,
+    "salto_intercontinental": true,
+    "ip_address": "197.255.125.213",
+    "rtt": 0.3979030609130859
+  }
+]
+
