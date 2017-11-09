@@ -51,7 +51,7 @@ www.uni-lj.si/
     "ip_address": "185.70.203.22",
     "salto_intercontinental": true,
     "hop_num": 8
-    ITALIA
+    BUENOS AIRES
   },
   {
     "rtt": 0.39151793459187384,
