@@ -19,17 +19,14 @@ Finalmente se llega al destino en Tokyo.
 
 En la tabla de la figura \ref{tabla1} vemos que la mayoría de los saltos son incorrectamente predichos. Sólo $\frac{5}{16}$ resultan correctos, en total. Observamos que todos las predicciones incorrectas son falsos positivos. Lo analizamos por partes:
 
-Porcentaje de saltos que no responden: 30,43\%
-
-Largo de la ruta de saltos que responden: 16 saltos 
-
-Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 2
-
-Cantidad de outliers: 14
-
-Falsos positivos: 11
-
-Falsos negativos: 0
+\begin{itemize}
+	\item Porcentaje de saltos que no responden: 30,43\%
+	\item Largo de la ruta de saltos que responden: 16 saltos 
+	\item Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 2
+	\item Cantidad de outliers: 14
+	\item Falsos positivos: 11
+	\item Falsos negativos: 0
+\end{itemize}
 
 \begin{figure}[H]
 \centering
@@ -70,6 +67,8 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa1}
 \end{figure}
 
+En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 16, pero a la vez el mayor salto negativo se da en el salto 17. De esto deducimos que probablemente haya varios saltos posibles en esta zona, y la ruta elegida por la herramienta es una mezcla de alguna de estas. Esto ocurre cuando los paquetes están en Japón. El resto de los puntos no muestran una tendencia definida (ni creciente ni decreciente).
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{tokyo1.png}
@@ -77,9 +76,22 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{diff1}
 \end{figure}
 
+De la figura \ref{sdev1} vemos que los puntos están muy dispersos, lejos del 0 de $x$ (que representa el promedio). Por eso el método de Cimbala resultó con muchos outliers.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{tokyo2.png}
 \caption{Gráfico de $\frac{X_i - \bar{X}}{S}$ en función de las diferencias de RTT.}
 \label{sdev1}
+\end{figure}
+
+Atribuimos los falsos positivos en Argentina a la diferencia de la velocidad de conexión con el resto del mundo. De acuerdo al reporte del estado de internet de Akamai \cite{akamai} nuestro país tiene baja velocidad promedio de internet, como se muestra en la figura \ref{speed}. Como estamos usando los RTT para calcular los saltos, no podemos saber si un RTT entre saltos más grande se debe a mayor distancia o a menor velocidad. Esto posibilita los falsos positivos.
+
+En cuanto a Japón, vemos en la figura \ref{speed} que su velocidad de conexión es mucho más alta que el promedio. Pero como fue mencionado antes, en esa zona probablemente haya rutas alternativas internas y el criterio elegido puede mezclarlas entre sí, causando falsos positivos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{speed.png}
+\caption{Velocidades promedio de internet en el mundo.}
+\label{speed}
 \end{figure}
