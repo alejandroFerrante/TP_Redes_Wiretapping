@@ -9,28 +9,52 @@ Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados
 
 Paquetes enviados a www.ug.edu.gh
 
-\begin{tabular}{l | l | l | l | l}
-Hop & RTT & IP & Ubicación & Salto Intercontinental\\
-1 & 0.0231 & 192.168.0.1 & Buenos Aires, Argentina & true\\
+\begin{figure}[H]
+\centering
+\begin{tabular}{l | l | l | l | c | c}
+Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
+\hline
+1 & 0.0231 & 192.168.0.1 & Buenos Aires, Argentina & true & \xmark\\
 2 & null & null & null & null\\
 3 & null & null & null & null\\
 4 & null & null & null & null\\
 5 & null & null & null & null\\
 6 & null & null & null & null\\
-7 & 0.2930 & \texttt{200.89.165.130} & Buenos Aires, Argentina & true\\
-8 & 0.1588 & \texttt{200.89.165.222} & Buenos Aires, Argentina & true\\
-9 & 0.1693 & \texttt{185.70.203.32} & Buenos Aires, Argentina & true\\
-10 & 0.2927 & \texttt{195.22.199.185} & Ashburn, EEUU & true\\
-11 & 0.1995 & \texttt{216.6.87.202} & Ashburn, EEUU & true\\
-12 & 0.6590 & \texttt{216.6.87.105} & Londres, Inglaterra & true\\
-13 & 0.3755 & \texttt{80.231.130.130} & Londres, Inglaterra & true\\
-14 & 0.4624 & \texttt{80.231.76.85} & Londres, Inglaterra & false\\
-15 & 1.0908 & \texttt{195.219.195.42} & Singapur, Singapur & true\\
-16 & 0.3648 & \texttt{41.204.60.149} & Kumasi, Ghana & true\\
-17 & 0.4641 & \texttt{41.204.60.150} & Kumasi, Ghana & false\\
-18 & 0.3928 & \texttt{197.255.127.6} & Accra, Ghana & true\\
-19 & 0.7883 & \texttt{197.255.127.35} & Accra, Ghana & true\\
-10 & 0.4128 & \texttt{197.255.125.213} & Accra, Ghana & true\\
+7 & 0.2930 & \texttt{200.89.165.130} & Buenos Aires, Argentina & true & \xmark\\
+8 & 0.1588 & \texttt{200.89.165.222} & Buenos Aires, Argentina & true & \xmark\\
+9 & 0.1693 & \texttt{185.70.203.32} & Buenos Aires, Argentina & true & \xmark\\
+10 & 0.2927 & \texttt{195.22.199.185} & Ashburn, EEUU & true & \cmark\\
+11 & 0.1995 & \texttt{216.6.87.202} & Ashburn, EEUU & true & \xmark\\
+12 & 0.6590 & \texttt{216.6.87.105} & Londres, Inglaterra & true & \cmark\\
+13 & 0.3755 & \texttt{80.231.130.130} & Londres, Inglaterra & true & \xmark\\
+14 & 0.4624 & \texttt{80.231.76.85} & Londres, Inglaterra & false & \cmark\\
+15 & 1.0908 & \texttt{195.219.195.42} & Singapur, Singapur & true & \cmark\\
+16 & 0.3648 & \texttt{41.204.60.149} & Kumasi, Ghana & true & \cmark\\
+17 & 0.4641 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
+18 & 0.3928 & \texttt{197.255.127.6} & Accra, Ghana & true & \xmark\\
+19 & 0.7883 & \texttt{197.255.127.35} & Accra, Ghana & true & \xmark\\
+10 & 0.4128 & \texttt{197.255.125.213} & Accra, Ghana & true & \xmark\\
 \end{tabular}
+\caption{Tabla de resultados para la Universidad de Ghana.}
+\label{tabla2}
+\end{figure}
 
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{ghana.png}
+\caption{Mapa de resultados para la Universidad de Ghana.}
+\label{mapa2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{ghana1.png}
+\caption{Gráfico de diferencias de RTT en función de cada salto.}
+\label{diff2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{ghana2.png}
+\caption{Gráfico de $\frac{X_i - \bar{X}}{S}$ en función de las diferencias de RTT.}
+\label{sdev2}
+\end{figure}
