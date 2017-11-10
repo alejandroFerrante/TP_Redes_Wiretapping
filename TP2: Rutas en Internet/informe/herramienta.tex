@@ -1,11 +1,11 @@
 \section{Implementación}
-La herramienta se encuentra implementada en el archivo \texttt{traceroute.py}. Toma como parámetros el tamaño de las ráfagas de paquetes (\texttt{burst\_size}) y el máximo TTL.
+La herramienta se encuentra implementada en el archivo \texttt{traceroute.py}. Toma como parámetros la dirección a envíar los paquetes, el tamaño de las ráfagas de paquetes (\texttt{burst\_size}) y el máximo TTL.
 
 Para cada TTL entre 1 y el máximo se envían \texttt{burst\_size} paquetes con el TTL adecuado y se reciben las respuestas, usando la función \texttt{sr()} de \texttt{scapy}. Si se recibe un echo reply, se dejan de mandar ráfagas.
 
-A partir de los paquetes recibidos como respuesta se obtiene una IP (la más común de entre los hosts que respondieron) y un RTT (el promedio de RTT para la IP elegida), para cada TTL. Si no se recibe ninguna respuesta, ambos son nulos. Elegimos promediar sólo los RTT de los saltos con la IP elegida y no todos porque esto es más consistente con la elección.
+A partir de los paquetes recibidos como respuesta de un TTL se obtiene una IP (la más común de entre los hosts que respondieron) y un RTT (el promedio de RTT para la IP elegida). Si no se recibe ninguna respuesta, ambos son nulos. Elegimos promediar sólo los RTT de los saltos con la IP elegida y no todos porque esto es más consistente con la elección.
 
-Después empieza el análisis para predecir los saltos intercontinentales. Usamos como datos las diferencias de los RTT promedio entre cada salto y su anterior inmediato que no sea nulo. El primer salto no nulo tiene diferencia igual a su RTT promedio. Elegimos estos valores como datos a analizar porque esperamos que los saltos intercontinentales tarden más tiempo que los que no lo son, entonces un outlier para estos datos es un posible salto intercontinental.
+Una vez procesados los envíos, empieza el análisis para predecir los saltos intercontinentales. Usamos como datos las diferencias de los RTT promedio entre cada salto y su anterior inmediato que no sea nulo. El primer salto no nulo tiene diferencia igual a su RTT promedio. Elegimos estos valores como datos a analizar porque esperamos que los saltos intercontinentales tarden más tiempo que los que no lo son, entonces un outlier para estos datos es un posible salto intercontinental.
 
 Separamos los datos entre los saltos nulos (y con salto intercontinental, pero todavía no hay ninguno) y los demás saltos, que van a participar como datos válidos para encontrar a los outliers.
 
