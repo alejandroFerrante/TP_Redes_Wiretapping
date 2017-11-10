@@ -9,13 +9,21 @@ Esto nos hizo sospechar acerca de la correctitud de esta ruta, ya que existen ca
 
 Como vimos que varias páginas de geolocalización de IP daban resultados distintos para la misma IP, usando una página que da resultados de fuentes distintas \cite{iplocation} comparamos resultados para la IP \texttt{195.22.219.3}. Obtuvimos como resultado que casi todas las fuentes devuelven una ubicación en Italia, mientras que una devuelve la ciudad de Fortaleza, en Brasil. Observamos que el cable submarino Altantis-2 conecta entre otras ciudades Las Toninas con Fortaleza \cite{atlantis2}. Además, figura como uno de los dueños del cable la empresa Telecom Italia Sparkle, que figura como ISP en varias búsquedas que ubican esta IP en Italia. Por esto creemos que la verdadera ruta va directamente hacia Fortaleza usando el cable Atlantis-2, ya que los métodos de geolocalización de IPs no son muy confiables \cite{accuracy}, y podría ocurrir que la ubicación de una IP situada físicamente en Brasil pero vinculada a una ISP italiana sea medida incorrectamente.
 
-Luego la ruta sigue por San Pablo, y va hasta Nueva York. *male escribiendo*
+Luego la ruta sigue por San Pablo, y luego salta hasta Nueva York. En este caso mirando el mapa \cite{cables} vemos que se usa el cable Seabras-1, que une estas dos ciudades \cite{seabras1}.
+
+Siguiendo por Estados Unidos, la ruta pasa por Seattle y salta hasta Osaka, en Japón. Esto es posible si se usa el cable Pacific Crossing-1, que entre otras ciudades une Shima, Japón (cercana a Osaka) con la zona de Seattle.
+
+Finalmente se llega al destino en Tokyo.
+
+\subsection{Análisis de las predicciones de salto intercontinental}
+
+
 
 
 \begin{figure}[H]
 \centering
 \begin{tabular}{l | l | l | l | l}
-Hop & RTT & IP & Ubicación & Salto Intercontinental\\
+Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 1 & 0.0200 & 192.168.0.1 & Buenos Aires, Argentina & true\\
 2 & null & null & null & null\\
 3 & null & null & null & null\\
@@ -40,12 +48,12 @@ Hop & RTT & IP & Ubicación & Salto Intercontinental\\
 22 & 0.3522 & \texttt{154.34.240.254} & Tokyo, Japón & true\\
 23 & 0.4735 & \texttt{210.152.135.178} & Tokyo, Japón & true\\
 \end{tabular}
-\label{tabla1}
 \caption{Tabla de resultados para la Universidad de Tokyo.}
+\label{tabla1}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{tokyo.png}
-\label{mapa1}
 \caption{Mapa de resultados para la Universidad de Tokyo.}
+\label{mapa1}
 \end{figure}
