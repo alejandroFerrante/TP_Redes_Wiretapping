@@ -1,10 +1,20 @@
 \section{Ruta 3: Universidad de Ljubljana}
 
+Ejecutamos la herramienta usando la dirección \texttt{www.uni-lj.si}, y al igual que en los demás casos con ráfagas de 100 paquetes y TTL máximo 30.
+
+Realizamos un gráfico de la ruta obtenida usando una página de geolocalización por IP \cite{ip2location}, que se encuentra en la figura \ref{mapa3}.
+
 \subsection{Análisis de la ruta obtenida}
 
-Los paquetes hacen varios saltos en Buenos Aires (aunque algunos no responden podemos suponer que son en Buenos Aires), luego de lo cual hay un salto de Buenos Aires a Viena. Esto es anormal, ya que el único cable submarino que conecta Argentina y Europa llega a España. Esto puede deberse a algún tipo de conexión directa entre Viena y dicho cable. Luego hay algunos saltos más en Europa hasta llegar a destino. Hay un solo salto intercontinental en el mapa, que es el salto Buenos Aires-Viena, este salto es detectado correctamente, pero al igual que en experimentos anteriores hay muchos falsos positivos.
+Los paquetes hacen varios saltos en Buenos Aires (aunque algunos no responden podemos suponer que son en Buenos Aires), luego de lo cual hay un salto de Buenos Aires a Viena. Esto es anormal, ya que el único cable submarino que conecta Argentina y Europa llega a Portugal, el Atlantis-2 \cite{atlantis2}. Usando otras fuentes para geolocalización de IP vemos que la IP \texttt{185.70.203.22} del salto 8 podría en realidad estar localizada en Italia. Al igual que en la primera ruta creemos que esto se debe a la utilización del mismo cable Atlantis-2, y que esa IP podría estar en Portugal.
+
+Luego hay algunos saltos más en Europa hasta llegar a destino. Hay un solo salto intercontinental en el mapa, que es el salto Buenos Aires-Viena, este salto es detectado correctamente, pero al igual que en experimentos anteriores hay muchos falsos positivos.
+
+Observamos que el destino final de los paquetes no es la ciudad de Ljubljana, sino Nova Gorica que se encuentra a aproximadamente 100 kilómetros. Es posible que los servidores de la universidad se encuentren allí.
 
 \subsection{Análisis de las predicciones de salto intercontinental}
+
+En la tabla \ref{tabla3} vemos que la mayoría de los saltos no estan bien predichos.
 
 \begin{itemize}
 	\item Porcentaje de saltos que no responden: 28,57\%
@@ -14,8 +24,6 @@ Los paquetes hacen varios saltos en Buenos Aires (aunque algunos no responden po
 	\item Falsos positivos: 7
 	\item Falsos negativos: 0
 \end{itemize}
-
-www.uni-lj.si
 
 \begin{figure}[H]
 \centering
@@ -29,7 +37,7 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 5 & null & null & null & null\\
 6 & 0.1651 & \texttt{200.89.161.81} & Buenos Aires, Argentina & true & \xmark\\
 7 & 0.3778 & \texttt{200.89.165.86} & Buenos Aires, Argentina & true & \xmark\\
-8 & 0.2096 & \texttt{185.70.203.22} & Buenos Aires, Argentina & true & \xmark\\
+8 & 0.2096 & \texttt{185.70.203.22} & Argentina/Portugal/Italia? & true & \xmark\\
 9 & 0.3915 & \texttt{195.22.215.168} & Viena, Austria & true & \cmark\\
 10 & 0.4367 & \texttt{195.22.215.199} & Viena, Austria & false & \cmark\\
 11 & 0.5828 & \texttt{77.94.128.25} & Ljubljana, Eslovenia & true & \xmark\\
@@ -47,12 +55,16 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa3}
 \end{figure}
 
+En la figura \ref{diff3} vemos las diferencias de RTT por cada par de saltos. Observamos que algunos valores son negativos y que parece haber un máximo en el salto 7.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{ljubljana1.png}
 \caption{Gráfico de diferencias de RTT en función de cada salto.}
 \label{diff3}
 \end{figure}
+
+En la figura \ref{sdev3} observamos una dispersión muy grande de los puntos, lo que coincide con la gran cantidad de outliers encontrada.
 
 \begin{figure}[H]
 \centering
