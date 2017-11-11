@@ -1,11 +1,22 @@
 \section{Ruta 2: Universidad de Ghana}
+\subsection{Análisis de la ruta obtenida}
 
-La ruta parte de Buenoa Aires, que es consistente ya que los paquetes fueron enviados desde ahi. Luego de no obtener respuesta en varios saltos, la siguiente respuesta sigue en Buenos Aires.
+La ruta parte de Buenos Aires, que es consistente ya que los paquetes fueron enviados desde ahi. Luego de no obtener respuesta en varios saltos, la siguiente respuesta sigue en Buenos Aires.
 La ruta sigue en Estados Unidos, es posible que se utilice esta ruta a pesar de haber una mas corta (según el mapa de cables subacuáticos) porque al ser mas utilizadas las comunicaciones entre Argentina y America del Norte (particularmente Estados Unidos) que con África, es posible que los paquetes vayan mas rápido por esa ruta.
 Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envio por una ruta muy larga.
 Luego los paquetes realizan varios saltos en Ghana hasta llegar a destino. 
 Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados correctamente. A la vez, hay muchos falsos positivos, en el caso del salto Londres-Singapur es entendible porque es un salto con un RTT muy alto, en los otros casos, pensamos que poría deberse a la aparición de RTTs con diferencia negativa con el salto anterior, que hacen que la detección de Outliers sea peor.
 
+\subsection{Análisis de las predicciones de salto intercontinental}
+
+\begin{itemize}
+	\item Porcentaje de saltos que no responden: 25,00\%
+	\item Largo de la ruta de saltos que responden: 15 saltos 
+	\item Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 4
+	\item Cantidad de outliers: 12
+	\item Falsos positivos: 9
+	\item Falsos negativos: 0
+\end{itemize}
 
 Paquetes enviados a www.ug.edu.gh
 
@@ -33,7 +44,7 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 17 & 0.4641 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
 18 & 0.3928 & \texttt{197.255.127.6} & Accra, Ghana & true & \xmark\\
 19 & 0.7883 & \texttt{197.255.127.35} & Accra, Ghana & true & \xmark\\
-10 & 0.4128 & \texttt{197.255.125.213} & Accra, Ghana & true & \xmark\\
+20 & 0.4128 & \texttt{197.255.125.213} & Accra, Ghana & true & \xmark\\
 \end{tabular}
 \caption{Tabla de resultados para la Universidad de Ghana.}
 \label{tabla2}
