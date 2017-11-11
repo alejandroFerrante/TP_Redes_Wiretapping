@@ -1,13 +1,24 @@
 \section{Ruta 2: Universidad de Ghana}
+
+Ejecutamos la herramienta usando la dirección \texttt{www.ug.edu.gh}, y al igual que en el caso anterior con ráfagas de 100 paquetes y TTL máximo 30.
+
+Realizamos un gráfico de la ruta obtenida usando una página de geolocalización por IP \cite{ip2location}, que se encuentra en la figura \ref{mapa2}.
+
 \subsection{Análisis de la ruta obtenida}
 
 La ruta parte de Buenos Aires, que es consistente ya que los paquetes fueron enviados desde ahí. Luego de no obtener respuesta en varios saltos, la siguiente respuesta sigue en Buenos Aires.
+
 La ruta sigue en Estados Unidos, es posible que se utilice esta ruta a pesar de haber una más corta (según el mapa de cables subacuáticos \cite{cables}) porque al ser más utilizadas las comunicaciones entre Argentina y América del Norte (particularmente Estados Unidos) que con África, es posible que los paquetes vayan más rápido por esa ruta.
-Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envío por una ruta muy larga.
+
+Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envío por una ruta muy larga. De todas formas buscamos otras fuentes y vimos que la IP \texttt{195.219.195.42} podría estar ubicada en Inglaterra.
+
 Luego los paquetes realizan varios saltos en Ghana hasta llegar a destino. 
+
 Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados correctamente. A la vez, hay muchos falsos positivos, en el caso del salto Londres-Singapur es entendible porque es un salto con un RTT muy alto, en los otros casos, pensamos que podría deberse a la aparición de RTTs con diferencia negativa con el salto anterior, que hacen que la detección de outliers sea peor.
 
 \subsection{Análisis de las predicciones de salto intercontinental}
+
+Calculamos las siguientes métricas de acuerdo a lo observado en la tabla \ref{tabla2}:
 
 \begin{itemize}
 	\item Porcentaje de saltos que no responden: 25,00\%
@@ -17,8 +28,6 @@ Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados
 	\item Falsos positivos: 9
 	\item Falsos negativos: 0
 \end{itemize}
-
-Paquetes enviados a www.ug.edu.gh
 
 \begin{figure}[H]
 \centering
@@ -39,7 +48,7 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 12 & 0.6590 & \texttt{216.6.87.105} & Londres, Inglaterra & true & \cmark\\
 13 & 0.3755 & \texttt{80.231.130.130} & Londres, Inglaterra & true & \xmark\\
 14 & 0.4624 & \texttt{80.231.76.85} & Londres, Inglaterra & false & \cmark\\
-15 & 1.0908 & \texttt{195.219.195.42} & Singapur, Singapur & true & \cmark\\
+15 & 1.0908 & \texttt{195.219.195.42} & Singapur/Inglaterra? & true & \cmark\\
 16 & 0.3648 & \texttt{41.204.60.149} & Kumasi, Ghana & true & \cmark\\
 17 & 0.4641 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
 18 & 0.3928 & \texttt{197.255.127.6} & Accra, Ghana & true & \xmark\\
@@ -56,7 +65,7 @@ Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa2}
 \end{figure}
 
-En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 15, esto tiene sentido porque es el salto que va a singapur. Aunque el siguiente salto es un salto con menor RTT, por lo que la herramienta no siempre debe estar tomando este salto. El resto de los puntos no muestran una tendencia definida (ni creciente ni decreciente).
+En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 15, esto tiene sentido porque es el salto que va a Singapur. Aunque el siguiente salto es un salto con menor RTT, por lo que la herramienta no siempre debe estar tomando este salto. El resto de los puntos no muestran una tendencia definida (ni creciente ni decreciente).
 
 
 \begin{figure}[H]
@@ -66,7 +75,7 @@ En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 
 \label{diff2}
 \end{figure}
 
-De la figura \ref{sdev2} vemos que también hay varios puntos están muy dispersosy por eso este experimento también devolvió muchos outliers como resultado.
+De la figura \ref{sdev2} vemos que también hay varios puntos están muy dispersos y por eso este experimento también devolvió muchos outliers como resultado.
 
 \begin{figure}[H]
 \centering
