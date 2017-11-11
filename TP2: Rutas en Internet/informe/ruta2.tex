@@ -1,11 +1,11 @@
 \section{Ruta 2: Universidad de Ghana}
 \subsection{Análisis de la ruta obtenida}
 
-La ruta parte de Buenos Aires, que es consistente ya que los paquetes fueron enviados desde ahi. Luego de no obtener respuesta en varios saltos, la siguiente respuesta sigue en Buenos Aires.
-La ruta sigue en Estados Unidos, es posible que se utilice esta ruta a pesar de haber una mas corta (según el mapa de cables subacuáticos) porque al ser mas utilizadas las comunicaciones entre Argentina y America del Norte (particularmente Estados Unidos) que con África, es posible que los paquetes vayan mas rápido por esa ruta.
-Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envio por una ruta muy larga.
+La ruta parte de Buenos Aires, que es consistente ya que los paquetes fueron enviados desde ahí. Luego de no obtener respuesta en varios saltos, la siguiente respuesta sigue en Buenos Aires.
+La ruta sigue en Estados Unidos, es posible que se utilice esta ruta a pesar de haber una más corta (según el mapa de cables subacuáticos \cite{cables}) porque al ser más utilizadas las comunicaciones entre Argentina y América del Norte (particularmente Estados Unidos) que con África, es posible que los paquetes vayan más rápido por esa ruta.
+Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envío por una ruta muy larga.
 Luego los paquetes realizan varios saltos en Ghana hasta llegar a destino. 
-Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados correctamente. A la vez, hay muchos falsos positivos, en el caso del salto Londres-Singapur es entendible porque es un salto con un RTT muy alto, en los otros casos, pensamos que poría deberse a la aparición de RTTs con diferencia negativa con el salto anterior, que hacen que la detección de Outliers sea peor.
+Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados correctamente. A la vez, hay muchos falsos positivos, en el caso del salto Londres-Singapur es entendible porque es un salto con un RTT muy alto, en los otros casos, pensamos que podría deberse a la aparición de RTTs con diferencia negativa con el salto anterior, que hacen que la detección de outliers sea peor.
 
 \subsection{Análisis de las predicciones de salto intercontinental}
 
