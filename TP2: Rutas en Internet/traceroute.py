@@ -99,7 +99,7 @@ def main():
 			hop.abs_dev = abs(hop.rtt_diff - mean)
 
 		#Calculate tau
-		ppf = stats.t.ppf(0.05, len(common_hops)-2)
+		ppf = stats.t.ppf(1-0.025, len(common_hops)-2)
 		tau = ppf * (len(common_hops) - 1) / (sqrt(len(common_hops)) * sqrt(len(common_hops) - 2 + ppf ** 2))
 		tauS = tau * Sdev
 
