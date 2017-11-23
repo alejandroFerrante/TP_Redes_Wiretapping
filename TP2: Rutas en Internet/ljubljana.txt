@@ -6,71 +6,95 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     "ip_address": "192.168.10.1",
     "salto_intercontinental": false,
     "hop_num": 1
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.008040275573730469,
     "ip_address": "192.168.0.1",
     "salto_intercontinental": true,
     "hop_num": 2
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.027068614959716797,
     "ip_address": "10.31.0.1",
     "salto_intercontinental": true,
     "hop_num": 3
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.013652653694152831,
     "ip_address": "10.242.2.133",
     "salto_intercontinental": false,
     "hop_num": 4
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.015070207118988037,
     "ip_address": "195.22.220.33",
     "salto_intercontinental": false,
     "hop_num": 5
+
+    Buenos Aires, Argentina / Italia
   },
   {
     "rtt": 0.016770603656768798,
     "ip_address": "195.22.220.32",
     "salto_intercontinental": false,
     "hop_num": 6
+
+    Buenos Aires, Argentina / Italia
   },
   {
     "rtt": 0.24880278825759888,
     "ip_address": "195.22.215.162",
     "salto_intercontinental": true,
     "hop_num": 7
+
+    Viena, Austria / Italia
   },
   {
     "rtt": 0.2495393656721019,
     "ip_address": "195.22.215.199",
     "salto_intercontinental": false,
     "hop_num": 8
+
+    Viena, Austria / Italia
   },
   {
     "rtt": 0.27526735175739636,
     "ip_address": "77.94.128.25",
     "salto_intercontinental": true,
     "hop_num": 9
+
+    Trzin, Eslovenia
   },
   {
     "rtt": 0.3386223499591534,
     "ip_address": "77.94.139.211",
     "salto_intercontinental": true,
     "hop_num": 10
+
+    Trzin, Eslovenia
   },
   {
     "rtt": 0.30200295338685484,
     "ip_address": "91.216.54.245",
     "salto_intercontinental": false,
     "hop_num": 11
+
+    Nova Gorica, Eslovenia
   },
   {
     "rtt": 0.2598112201690674,
     "ip_address": "91.223.115.153",
     "salto_intercontinental": false,
     "hop_num": 12
+
+    Nova Gorica, Eslovenia
   }
 ]

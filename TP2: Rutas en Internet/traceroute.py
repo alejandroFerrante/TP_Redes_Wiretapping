@@ -18,6 +18,10 @@ class Hop:
 		self.avg_rtt = avg_rtt
 		self.salto = False if ip else None
 
+def tau(n):
+	ppf = stats.t.ppf(1 - 0.025, n-2)
+	return ppf * (n - 1) / (sqrt(n) * sqrt(n - 2 + ppf ** 2))
+
 def main():
 	if len(sys.argv) != 4:
 		print('Modo de uso: sudo python3 traceroute.py <direccion> <tamaño de rafaga> <maximo ttl>')
@@ -101,9 +105,7 @@ def main():
 			hop.abs_dev = abs(hop.rtt_diff - mean)
 
 		#Calculate tau
-		ppf = stats.t.ppf(1-0.025, len(common_hops)-2)
-		tau = ppf * (len(common_hops) - 1) / (sqrt(len(common_hops)) * sqrt(len(common_hops) - 2 + ppf ** 2))
-		tauS = tau * Sdev
+		tauS = tau(len(common_hops)) * Sdev
 
 		common_hops.sort(key=lambda x: x.abs_dev)
 

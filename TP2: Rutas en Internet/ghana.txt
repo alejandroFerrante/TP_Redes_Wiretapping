@@ -6,113 +6,151 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     "ip_address": "192.168.10.1",
     "salto_intercontinental": false,
     "hop_num": 1
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.006007180213928222,
     "ip_address": "192.168.0.1",
     "salto_intercontinental": false,
     "hop_num": 2
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.016784078196475382,
     "ip_address": "10.31.0.1",
     "salto_intercontinental": false,
     "hop_num": 3
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.014113867282867431,
     "ip_address": "10.242.2.133",
     "salto_intercontinental": false,
     "hop_num": 4
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.013317852020263672,
     "ip_address": "195.22.220.33",
     "salto_intercontinental": false,
     "hop_num": 5
+
+    Buenos Aires, Argentina / Italia
   },
   {
     "rtt": 0.014758341312408448,
     "ip_address": "195.22.220.32",
     "salto_intercontinental": false,
     "hop_num": 6
+
+    Buenos Aires, Argentina / Italia
   },
   {
     "rtt": 0.15843845129013062,
     "ip_address": "195.22.199.191",
     "salto_intercontinental": true,
     "hop_num": 7
+
+    Ashburn, EEUU / Italia
   },
   {
     "rtt": 0.17140392780303956,
     "ip_address": "216.6.87.202",
     "salto_intercontinental": false,
     "hop_num": 8
+
+    Ashburn, EEUU
   },
   {
     "rtt": 0.23086218118667604,
     "ip_address": "216.6.87.138",
     "salto_intercontinental": true,
     "hop_num": 9
+
+    Newark, EEUU
   },
   {
     "rtt": 0.22283175468444824,
     "ip_address": "216.6.57.1",
     "salto_intercontinental": false,
     "hop_num": 10
+
+    Newark, EEUU
   },
   {
     "rtt": 0.22247609853744507,
     "ip_address": "80.231.130.33",
     "salto_intercontinental": false,
     "hop_num": 11
+
+    Londres, Inglaterra
   },
   {
     "rtt": 0.22513556718826294,
     "ip_address": "80.231.130.130",
     "salto_intercontinental": false,
     "hop_num": 12
+
+    Londres, Inglaterra
   },
   {
     "rtt": 0.22188199758529664,
     "ip_address": "80.231.76.121",
     "salto_intercontinental": false,
     "hop_num": 13
+
+    Londres, Inglaterra
   },
   {
     "rtt": 0.5116087940503966,
     "ip_address": "195.219.195.42",
     "salto_intercontinental": true,
     "hop_num": 14
+
+    Singapur / Londres
   },
   {
     "rtt": 0.321972278227289,
     "ip_address": "41.204.60.149",
     "salto_intercontinental": false,
     "hop_num": 15
+
+    Kumasi, Ghana
   },
   {
     "rtt": 0.33367799628864636,
     "ip_address": "41.204.60.150",
     "salto_intercontinental": false,
     "hop_num": 16
+
+    Kumasi, Ghana
   },
   {
     "rtt": 0.32982293764750165,
     "ip_address": "197.255.127.6",
     "salto_intercontinental": false,
     "hop_num": 17
+
+    Accra, Ghana
   },
   {
     "rtt": 0.3453131516774495,
     "ip_address": "197.255.127.35",
     "salto_intercontinental": false,
     "hop_num": 18
+
+    Accra, Ghana
   },
   {
     "rtt": 0.33933292735706677,
     "ip_address": "197.255.125.213",
     "salto_intercontinental": false,
     "hop_num": 19
+
+    Accra, Ghana
   }
 ]

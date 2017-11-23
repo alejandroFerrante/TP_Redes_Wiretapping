@@ -6,90 +6,120 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     "ip_address": "192.168.10.1",
     "salto_intercontinental": false,
     "hop_num": 1
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.005170042514801025,
     "ip_address": "192.168.0.1",
     "salto_intercontinental": false,
     "hop_num": 2
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.025891196727752686,
     "ip_address": "10.31.0.1",
     "salto_intercontinental": false,
     "hop_num": 3
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.018583366870880125,
     "ip_address": "10.242.2.133",
     "salto_intercontinental": false,
     "hop_num": 4
+
+    Buenos Aires, Argentina
   },
   {
     "rtt": 0.017830891609191893,
     "ip_address": "195.22.220.33",
     "salto_intercontinental": false,
     "hop_num": 5
+
+    Buenos Aires, Argentina / Italia
   },
   {
     "rtt": 0.018952195644378663,
     "ip_address": "195.22.220.32",
     "salto_intercontinental": false,
     "hop_num": 6
+
+    Buenos Aires, Argentina / Italia
   },
   {
     "rtt": 0.04350351333618164,
     "ip_address": "195.22.219.17",
     "salto_intercontinental": false,
     "hop_num": 7
+
+    Fortaleza, Brasil / Italia
   },
   {
     "rtt": 0.145841326713562,
     "ip_address": "149.3.181.65",
     "salto_intercontinental": true,
     "hop_num": 8
+
+    San Pablo, Brasil / Italia
   },
   {
     "rtt": 0.15910194396972657,
     "ip_address": "129.250.2.227",
     "salto_intercontinental": false,
     "hop_num": 9
+
+    Nueva York, EEUU
   },
   {
     "rtt": 0.2012411069869995,
     "ip_address": "129.250.4.13",
     "salto_intercontinental": true,
     "hop_num": 10
+
+    Seattle, EEUU
   },
   {
     "rtt": 0.20321641206741334,
     "ip_address": "129.250.2.54",
     "salto_intercontinental": false,
     "hop_num": 11
+
+    Seattle, EEUU
   },
   {
     "rtt": 0.3121191906929016,
     "ip_address": "129.250.3.61",
     "salto_intercontinental": true,
     "hop_num": 12
+
+    Osaka, Japón / EEUU
   },
   {
     "rtt": 0.30716083288192747,
     "ip_address": "129.250.5.39",
     "salto_intercontinental": false,
     "hop_num": 13
+
+    Osaka, Japón / EEUU
   },
   {
     "rtt": 0.3099595808982849,
     "ip_address": "129.250.3.232",
     "salto_intercontinental": false,
     "hop_num": 14
+
+    Osaka, Japón / EEUU
   },
   {
     "rtt": 0.3081473233748455,
     "ip_address": "61.200.80.218",
     "salto_intercontinental": false,
     "hop_num": 15
+
+    Osaka, Japón
   },
   {
     "rtt": null,
@@ -114,11 +144,15 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     "ip_address": "154.34.240.254",
     "salto_intercontinental": false,
     "hop_num": 19
+
+    Tokyo, Japón
   },
   {
     "rtt": 0.32267810583114626,
     "ip_address": "210.152.135.178",
     "salto_intercontinental": false,
     "hop_num": 20
+
+    Tokyo, Japón
   }
 ]
