@@ -1,195 +1,76 @@
-www.uni-lj.si/
-
+pandaconqueso@QUESO:~/repos/TP_Redes_Wiretapping/TP2: Rutas en Internet$ sudo python3 traceroute.py www.uni-lj.si 100 30
+WARNING: No route found for IPv6 destination :: (no default route?). This affects only IPv6
 [
   {
-    "rtt": 0.0457279782546194,
-    "ip_address": "192.168.0.1",
+    "rtt": 0.0024203856786092124,
+    "ip_address": "192.168.10.1",
     "salto_intercontinental": false,
     "hop_num": 1
-    BUENOS AIRES 
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.008040275573730469,
+    "ip_address": "192.168.0.1",
+    "salto_intercontinental": true,
     "hop_num": 2
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.027068614959716797,
+    "ip_address": "10.31.0.1",
+    "salto_intercontinental": true,
     "hop_num": 3
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.013652653694152831,
+    "ip_address": "10.242.2.133",
+    "salto_intercontinental": false,
     "hop_num": 4
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.015070207118988037,
+    "ip_address": "195.22.220.33",
+    "salto_intercontinental": false,
     "hop_num": 5
   },
   {
-    "rtt": 0.16516309286418715,
-    "ip_address": "200.89.161.81",
-    "salto_intercontinental": true,
+    "rtt": 0.016770603656768798,
+    "ip_address": "195.22.220.32",
+    "salto_intercontinental": false,
     "hop_num": 6
-    BUENOS AIRES
   },
   {
-    "rtt": 0.37789740562438967,
-    "ip_address": "200.89.165.86",
+    "rtt": 0.24880278825759888,
+    "ip_address": "195.22.215.162",
     "salto_intercontinental": true,
     "hop_num": 7
-    BUENOS AIRES
   },
   {
-    "rtt": 0.20962017635966457,
-    "ip_address": "185.70.203.22",
-    "salto_intercontinental": true,
-    "hop_num": 8
-    BUENOS AIRES
-  },
-  {
-    "rtt": 0.39151793459187384,
-    "ip_address": "195.22.215.168",
-    "salto_intercontinental": true,
-    "hop_num": 9
-    AUSTRIA, VIENA
-  },
-  {
-    "rtt": 0.4367699045883982,
+    "rtt": 0.2495393656721019,
     "ip_address": "195.22.215.199",
     "salto_intercontinental": false,
+    "hop_num": 8
+  },
+  {
+    "rtt": 0.27526735175739636,
+    "ip_address": "77.94.128.25",
+    "salto_intercontinental": true,
+    "hop_num": 9
+  },
+  {
+    "rtt": 0.3386223499591534,
+    "ip_address": "77.94.139.211",
+    "salto_intercontinental": true,
     "hop_num": 10
-    AUSTRIA, VIENA
   },
   {
-    "rtt": 0.5828570318222046,
-    "ip_address": "77.94.128.25",
-    "salto_intercontinental": true,
+    "rtt": 0.30200295338685484,
+    "ip_address": "91.216.54.245",
+    "salto_intercontinental": false,
     "hop_num": 11
-    ESLOVENIA, LJUBLJANA
   },
   {
-    "rtt": 0.3733524481455485,
-    "ip_address": "77.94.139.210",
-    "salto_intercontinental": true,
+    "rtt": 0.2598112201690674,
+    "ip_address": "91.223.115.153",
+    "salto_intercontinental": false,
     "hop_num": 12
-    ESLOVENIA, LJUBLJANA
-  },
-  {
-    "rtt": 0.45212686999460283,
-    "ip_address": "91.216.54.245",
-    "salto_intercontinental": true,
-    "hop_num": 13
-    ESLOVENIA, NOVA GORICA
-  },
-  {
-    "rtt": 0.3534089681950021,
-    "ip_address": "91.223.115.153",
-    "salto_intercontinental": true,
-    "hop_num": 14
-    ESLOVENIA, NOVA GORICA
   }
 ]
-
-
-otra:
-
-[
-  {
-    "hop_num": 1,
-    "rtt": 0.03220939362186125,
-    "ip_address": "10.2.203.254",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 2,
-    "rtt": 0.013499239439605385,
-    "ip_address": "157.92.18.99",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 3,
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null
-  },
-  {
-    "hop_num": 4,
-    "rtt": 0.06474549212354294,
-    "ip_address": "157.92.47.98",
-    "salto_intercontinental": false
-  },
-  {
-    "hop_num": 5,
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null
-  },
-  {
-    "hop_num": 6,
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null
-  },
-  {
-    "hop_num": 7,
-    "rtt": 0.017981628982388243,
-    "ip_address": "131.100.186.98",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 8,
-    "rtt": 0.45688007211172454,
-    "ip_address": "4.15.159.233",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 9,
-    "rtt": 0.3707586005330086,
-    "ip_address": "4.69.135.30",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 10,
-    "rtt": 0.3487497334894927,
-    "ip_address": "4.69.135.30",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 11,
-    "rtt": 0.27122689753162615,
-    "ip_address": "212.73.203.146",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 12,
-    "rtt": 0.2795636107524236,
-    "ip_address": "77.94.128.25",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 13,
-    "rtt": 0.3322964854862379,
-    "ip_address": "77.94.139.210",
-    "salto_intercontinental": false
-  },
-  {
-    "hop_num": 14,
-    "rtt": 0.6541243053617931,
-    "ip_address": "91.216.54.245",
-    "salto_intercontinental": true
-  },
-  {
-    "hop_num": 15,
-    "rtt": 0.3661692240803512,
-    "ip_address": "91.223.115.153",
-    "salto_intercontinental": true
-  }
-]
-

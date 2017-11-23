@@ -1,302 +1,124 @@
-www.u-tokyo.ac.jp
-
+pandaconqueso@QUESO:~/repos/TP_Redes_Wiretapping/TP2: Rutas en Internet$ sudo python3 traceroute.py www.u-tokyo.ac.jp 100 30
+WARNING: No route found for IPv6 destination :: (no default route?). This affects only IPv6
 [
   {
-    "rtt": 0.020071242984972502,
-    "ip_address": "192.168.0.1",
-    "salto_intercontinental": true,
+    "rtt": 0.0017325083414713542,
+    "ip_address": "192.168.10.1",
+    "salto_intercontinental": false,
     "hop_num": 1
-    BUENOS AIRES
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.005170042514801025,
+    "ip_address": "192.168.0.1",
+    "salto_intercontinental": false,
     "hop_num": 2
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.025891196727752686,
+    "ip_address": "10.31.0.1",
+    "salto_intercontinental": false,
     "hop_num": 3
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.018583366870880125,
+    "ip_address": "10.242.2.133",
+    "salto_intercontinental": false,
     "hop_num": 4
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
+    "rtt": 0.017830891609191893,
+    "ip_address": "195.22.220.33",
+    "salto_intercontinental": false,
     "hop_num": 5
   },
   {
-    "rtt": 0.07424725488174794,
-    "ip_address": "200.89.161.85",
+    "rtt": 0.018952195644378663,
+    "ip_address": "195.22.220.32",
     "salto_intercontinental": false,
     "hop_num": 6
-    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
   },
   {
-    "rtt": 0.03699378086173016,
-    "ip_address": "200.89.165.197",
-    "salto_intercontinental": true,
+    "rtt": 0.04350351333618164,
+    "ip_address": "195.22.219.17",
+    "salto_intercontinental": false,
     "hop_num": 7
-    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
   },
   {
-    "rtt": 0.04346095479053,
-    "ip_address": "200.89.165.222",
+    "rtt": 0.145841326713562,
+    "ip_address": "149.3.181.65",
     "salto_intercontinental": true,
     "hop_num": 8
-    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
   },
   {
-    "rtt": 0.02192910263935725,
-    "ip_address": "185.70.203.32",
-    "salto_intercontinental": true,
-    "hop_num": 9
-    Argentina, Ciudad Autonoma de Buenos Aires, Buenos Aires
-  },
-  {
-    "rtt": 0.06048880993051732,
-    "ip_address": "195.22.219.3",
-    "salto_intercontinental": true,
-    "hop_num": 10
-    Italy, Lombardia, San Paolo
-  },
-  {
-    "rtt": 0.1129073625082498,
-    "ip_address": "149.3.181.65",
-    "salto_intercontinental": false,
-    "hop_num": 11
-    Brazil, Sao Paulo, Sao Paulo
-  },
-  {
-    "rtt": 0.17000439292506167,
+    "rtt": 0.15910194396972657,
     "ip_address": "129.250.2.227",
-    "salto_intercontinental": true,
-    "hop_num": 12
-    United States, New York, New York City
+    "salto_intercontinental": false,
+    "hop_num": 9
   },
   {
-    "rtt": 0.2852083534322759,
+    "rtt": 0.2012411069869995,
     "ip_address": "129.250.4.13",
     "salto_intercontinental": true,
-    "hop_num": 13
-    United States, Washington, Seattle
+    "hop_num": 10
   },
   {
-    "rtt": 0.49432093153397244,
+    "rtt": 0.20321641206741334,
     "ip_address": "129.250.2.54",
-    "salto_intercontinental": true,
-    "hop_num": 14
-    United States, Washington, Seattle
+    "salto_intercontinental": false,
+    "hop_num": 11
   },
   {
-    "rtt": 0.42420270366053425,
+    "rtt": 0.3121191906929016,
     "ip_address": "129.250.3.61",
     "salto_intercontinental": true,
-    "hop_num": 15
-    Japan, Osaka, Osaka
+    "hop_num": 12
   },
   {
-    "rtt": 0.9055390207391036,
-    "ip_address": "129.250.5.41",
-    "salto_intercontinental": true,
-    "hop_num": 16
-    Japan, Osaka, Osaka
+    "rtt": 0.30716083288192747,
+    "ip_address": "129.250.5.39",
+    "salto_intercontinental": false,
+    "hop_num": 13
   },
   {
-    "rtt": 0.6164713529023257,
-    "ip_address": "129.250.3.106",
-    "salto_intercontinental": true,
-    "hop_num": 17
-    Japan, Osaka, Osaka
+    "rtt": 0.3099595808982849,
+    "ip_address": "129.250.3.232",
+    "salto_intercontinental": false,
+    "hop_num": 14
   },
   {
-    "rtt": 0.37772628435721767,
+    "rtt": 0.3081473233748455,
     "ip_address": "61.200.80.218",
-    "salto_intercontinental": true,
-    "hop_num": 18
-    Japan, Osaka, Osaka
+    "salto_intercontinental": false,
+    "hop_num": 15
   },
   {
     "rtt": null,
     "ip_address": null,
     "salto_intercontinental": null,
+    "hop_num": 16
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 17
+  },
+  {
+    "rtt": null,
+    "ip_address": null,
+    "salto_intercontinental": null,
+    "hop_num": 18
+  },
+  {
+    "rtt": 0.32519585371017456,
+    "ip_address": "154.34.240.254",
+    "salto_intercontinental": false,
     "hop_num": 19
   },
   {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
-    "hop_num": 20
-  },
-  {
-    "rtt": null,
-    "ip_address": null,
-    "salto_intercontinental": null,
-    "hop_num": 21
-  },
-  {
-    "rtt": 0.35222768276295763,
-    "ip_address": "154.34.240.254",
-    "salto_intercontinental": true,
-    "hop_num": 22
-     Japan, Tokyo, Tokyo
-  },
-  {
-    "rtt": 0.4735599548920341,
+    "rtt": 0.32267810583114626,
     "ip_address": "210.152.135.178",
-    "salto_intercontinental": true,
-    "hop_num": 23
-    Japan, Tokyo, Tokyo
+    "salto_intercontinental": false,
+    "hop_num": 20
   }
 ]
-
-otro:
-
-[
-  {
-    "hop_num": 1,
-    "rtt": 0.01844925068794413,
-    "salto_intercontinental": true,
-    "ip_address": "10.2.203.254"
-  },
-  {
-    "hop_num": 2,
-    "rtt": 0.007432460784912109,
-    "salto_intercontinental": true,
-    "ip_address": "157.92.18.99"
-  },
-  {
-    "hop_num": 3,
-    "rtt": null,
-    "salto_intercontinental": null,
-    "ip_address": null
-  },
-  {
-    "hop_num": 4,
-    "rtt": 0.04392809097212975,
-    "salto_intercontinental": true,
-    "ip_address": "157.92.47.98"
-  },
-  {
-    "hop_num": 5,
-    "rtt": null,
-    "salto_intercontinental": null,
-    "ip_address": null
-  },
-  {
-    "hop_num": 6,
-    "rtt": null,
-    "salto_intercontinental": null,
-    "ip_address": null
-  },
-  {
-    "hop_num": 7,
-    "rtt": 0.03066504974754489,
-    "salto_intercontinental": true,
-    "ip_address": "131.100.186.98"
-  },
-  {
-    "hop_num": 8,
-    "rtt": 0.03846753028131301,
-    "salto_intercontinental": true,
-    "ip_address": "131.100.186.114"
-  },
-  {
-    "hop_num": 9,
-    "rtt": 0.16325063066384227,
-    "salto_intercontinental": true,
-    "ip_address": "185.70.203.24"
-  },
-  {
-    "hop_num": 10,
-    "rtt": 0.16291649562796368,
-    "salto_intercontinental": true,
-    "ip_address": "195.22.219.145"
-  },
-  {
-    "hop_num": 11,
-    "rtt": 0.1563756912946701,
-    "salto_intercontinental": true,
-    "ip_address": "149.3.181.65"
-  },
-  {
-    "hop_num": 12,
-    "rtt": 0.21779812979943974,
-    "salto_intercontinental": true,
-    "ip_address": "129.250.2.227"
-  },
-  {
-    "hop_num": 13,
-    "rtt": 0.25320938263816395,
-    "salto_intercontinental": true,
-    "ip_address": "129.250.4.13"
-  },
-  {
-    "hop_num": 14,
-    "rtt": 0.42624775020555516,
-    "salto_intercontinental": true,
-    "ip_address": "129.250.2.54"
-  },
-  {
-    "hop_num": 15,
-    "rtt": 0.4781699326573586,
-    "salto_intercontinental": true,
-    "ip_address": "129.250.3.61"
-  },
-  {
-    "hop_num": 16,
-    "rtt": 0.5022118738719396,
-    "salto_intercontinental": true,
-    "ip_address": "129.250.5.41"
-  },
-  {
-    "hop_num": 17,
-    "rtt": 0.3791523233373114,
-    "salto_intercontinental": true,
-    "ip_address": "129.250.3.106"
-  },
-  {
-    "hop_num": 18,
-    "rtt": 0.3809922456741333,
-    "salto_intercontinental": true,
-    "ip_address": "61.200.80.218"
-  },
-  {
-    "hop_num": 19,
-    "rtt": null,
-    "salto_intercontinental": null,
-    "ip_address": null
-  },
-  {
-    "hop_num": 20,
-    "rtt": null,
-    "salto_intercontinental": null,
-    "ip_address": null
-  },
-  {
-    "hop_num": 21,
-    "rtt": null,
-    "salto_intercontinental": null,
-    "ip_address": null
-  },
-  {
-    "hop_num": 22,
-    "rtt": 0.3694683380341262,
-    "salto_intercontinental": false,
-    "ip_address": "154.34.240.254"
-  },
-  {
-    "hop_num": 23,
-    "rtt": 0.35769486170943066,
-    "salto_intercontinental": false,
-    "ip_address": "210.152.135.178"
-  }
-]
-

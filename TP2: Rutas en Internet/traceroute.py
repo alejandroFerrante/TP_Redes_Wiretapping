@@ -72,23 +72,16 @@ def main():
 			j = i-1
 			while final_data[j].avg_rtt is None and j > 0:
 				j -= 1
-			# final_data[i].rtt_diff = final_data[i].avg_rtt - final_data[j].avg_rtt
-			final_data[i].rtt_diff = abs(final_data[i].avg_rtt - final_data[j].avg_rtt) # modulo de diff_rtt
+			final_data[i].rtt_diff = final_data[i].avg_rtt - final_data[j].avg_rtt
 	i = 0
 	while final_data[i].ip is None and i < len(final_data):
 		i += 1
 	final_data[i].rtt_diff = final_data[i].avg_rtt
 
-	# common_hops = [d for d in final_data if (d.ip is not None and d.rtt_diff >= 0)]
-			# datos a analizar con Cimbala
-	# other_hops = [d for d in final_data if d not in common_hops]	
-			# (nulos, saltos intercontinentales y con diferencia nula)
-
-	common_hops = [d for d in final_data if d.ip is not None]
-	other_hops = [d for d in final_data if d not in common_hops]
-
-	# print(common_hops)
-	# print(other_hops)
+	common_hops = [d for d in final_data if (d.ip is not None and d.rtt_diff >= 0)]
+	# 		datos a analizar con Cimbala
+	other_hops = [d for d in final_data if d not in common_hops]	
+	# 		(nulos, saltos intercontinentales y con diferencia nula)
 
 	while len(common_hops) > 0:
 		#Calculate mean
