@@ -14,14 +14,14 @@ Observamos que el destino final de los paquetes no es la ciudad de Ljubljana, si
 
 \subsection{Análisis de las predicciones de salto intercontinental}
 
-En la tabla \ref{tabla3} vemos que la mayoría de los saltos no estan bien predichos.
+En la tabla \ref{tabla3} vemos que la mayoría de los saltos están bien predichos.
 
 \begin{itemize}
-	\item Porcentaje de saltos que no responden: 28,57\%
-	\item Largo de la ruta de saltos que responden: 10 saltos 
+	\item Porcentaje de saltos que no responden: 0\%
+	\item Largo de la ruta de saltos que responden: 12 saltos 
 	\item Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 1
-	\item Cantidad de outliers: 8
-	\item Falsos positivos: 7
+	\item Cantidad de outliers: 3
+	\item Falsos positivos: 1
 	\item Falsos negativos: 0
 \end{itemize}
 
@@ -30,20 +30,18 @@ En la tabla \ref{tabla3} vemos que la mayoría de los saltos no estan bien predi
 \begin{tabular}{l | l | l | l | c | c}
 Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \hline
-1 & 0.0457 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
-2 & null & null & null & null\\
-3 & null & null & null & null\\
-4 & null & null & null & null\\
-5 & null & null & null & null\\
-6 & 0.1651 & \texttt{200.89.161.81} & Buenos Aires, Argentina & true & \xmark\\
-7 & 0.3778 & \texttt{200.89.165.86} & Buenos Aires, Argentina & true & \xmark\\
-8 & 0.2096 & \texttt{185.70.203.22} & Argentina/Portugal/Italia? & true & \xmark\\
-9 & 0.3915 & \texttt{195.22.215.168} & Viena, Austria & true & \cmark\\
-10 & 0.4367 & \texttt{195.22.215.199} & Viena, Austria & false & \cmark\\
-11 & 0.5828 & \texttt{77.94.128.25} & Ljubljana, Eslovenia & true & \xmark\\
-12 & 0.3733 & \texttt{77.94.139.210} & Ljubljana, Eslovenia & true & \xmark\\
-13 & 0.4521 & \texttt{91.216.54.245} & Nova Gorica, Eslovenia & true & \xmark\\
-14 & 0.3534 & \texttt{91.223.115.153} & Nova Gorica, Eslovenia & true & \xmark\\
+1 & 0.0057 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
+2 & 0.0047 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
+3 & 0.0269 & \texttt{10.31.0.1} & Buenos Aires, Argentina & true & \xmark\\
+4 & 0.0166 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
+5 & 0.0155 & \texttt{195.22.220.33} & Buenos Aires & false & \cmark\\
+6 & 0.0247 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
+7 & 0.2531 & \texttt{195.22.215.162} & Viena, Austria & true & \cmark\\
+8 & 0.2610 & \texttt{195.22.215.199} & Viena, Austria & false & \cmark\\
+9 & 0.3840 & \texttt{77.94.128.25} & Trzin, Eslovenia & true & \cmark\\
+10 & 0.3982 & \texttt{77.94.139.211} & Trzin, Eslovenia & false & \cmark\\
+11 & 0.3707 & \texttt{91.216.54.245} & Nova Gorica, Eslovenia & false & \cmark\\
+12 & 0.2604 & \texttt{91.223.115.153} & Nova Gorica, Eslovenia & false & \cmark\\
 \end{tabular}
 \caption{Tabla de resultados para la Universidad de Ljubljana.}
 \label{tabla3}

@@ -17,15 +17,15 @@ Finalmente se llega al destino en Tokyo.
 
 \subsection{Análisis de las predicciones de salto intercontinental}
 
-En la tabla de la figura \ref{tabla1} vemos que la mayoría de los saltos son incorrectamente predichos. Sólo $\frac{4}{16}$ resultan correctos, en total. Observamos que todos las predicciones incorrectas son falsos positivos. Lo analizamos por partes:
+En la tabla de la figura \ref{tabla1} vemos que la mayoría de los saltos son correctamente predichos. Sólo $\frac{3}{17}$ resultan incorrectos, en total.
 
 \begin{itemize}
-	\item Porcentaje de saltos que no responden: 30,43\%
-	\item Largo de la ruta de saltos que responden: 16 saltos 
+	\item Porcentaje de saltos que no responden: 15\%
+	\item Largo de la ruta de saltos que responden: 17 saltos 
 	\item Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 2
-	\item Cantidad de outliers: 14
-	\item Falsos positivos: 11
-	\item Falsos negativos: 0
+	\item Cantidad de outliers: 3
+	\item Falsos positivos: 2
+	\item Falsos negativos: 1
 \end{itemize}
 
 \begin{figure}[H]
@@ -33,29 +33,26 @@ En la tabla de la figura \ref{tabla1} vemos que la mayoría de los saltos son in
 \begin{tabular}{l | l | l | l | c | c}
 Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \hline
-1 & 0.0200 & 192.168.0.1 & Buenos Aires, Argentina & true & \xmark\\
-2 & null & null & null & null\\
-3 & null & null & null & null\\
-4 & null & null & null & null\\
-5 & null & null & null & null\\
-6 & 0.0742 & \texttt{200.89.161.85} & Buenos Aires, Argentina & false & \cmark\\
-7 & 0.0369 & \texttt{200.89.165.197} & Buenos Aires, Argentina & true & \xmark\\
-8 & 0.0434 & \texttt{200.89.165.222} & Buenos Aires, Argentina & true & \xmark\\
-9 & 0.0219 & \texttt{185.70.203.32} & Buenos Aires, Argentina & true & \xmark\\
-10 & 0.0604 & \texttt{195.22.219.3} & Italia/Fortaleza, Brasil & true & \xmark\\
-11 & 0.1129 & \texttt{149.3.181.65} & San Pablo, Brasil & false & \cmark\\
-12 & 0.1700 & \texttt{129.250.2.227} & Nueva York, EEUU & true & \cmark\\
-13 & 0.2852 & \texttt{129.250.4.13} & Seattle, EEUU & true & \xmark\\
-14 & 0.4943 & \texttt{129.250.2.54} & Seattle, EEUU & true & \xmark\\
-15 & 0.4242 & \texttt{129.250.3.61} & Osaka, Japón & true & \cmark\\
-16 & 0.9055 & \texttt{129.250.5.41} & Osaka, Japón & true & \xmark\\
-17 & 0.6164 & \texttt{129.250.3.106} & Osaka, Japón & true & \xmark\\
-18 & 0.3777 & \texttt{61.200.80.218} & Osaka, Japón & true & \xmark\\
-19 & null & null & null & null\\
-20 & null & null & null & null\\
-21 & null & null & null & null\\
-22 & 0.3522 & \texttt{154.34.240.254} & Tokyo, Japón & true & \xmark\\
-23 & 0.4735 & \texttt{210.152.135.178} & Tokyo, Japón & true & \xmark\\
+1 & 0.0017 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
+2 & 0.0051 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
+3 & 0.0258 & \texttt{10.31.0.1} & Buenos Aires, Argentina & false & \cmark\\
+4 & 0.0185 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
+5 & 0.0178 & \texttt{195.22.220.33} & Buenos Aires, Argentina & false & \cmark\\
+6 & 0.0189 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
+7 & 0.0435 & \texttt{195.22.219.17} & Fortaleza, Brasil/Italia & false & \cmark\\
+8 & 0.1458 & \texttt{149.3.181.65} & San Pablo, Brasil & true & \xmark\\
+9 & 0.1591 & \texttt{129.250.2.227} & Nueva York, EEUU & false & \xmark\\
+10 & 0.2012 & \texttt{129.250.4.13} & Seattle, EEUU & true & \xmark\\
+11 & 0.2032 & \texttt{129.250.2.54} & Seattle, EEUU & false & \cmark\\
+12 & 0.3121 & \texttt{129.250.3.61} & Osaka, Japón & true & \cmark\\
+13 & 0.3071 & \texttt{129.250.5.39} & Osaka, Japón & false & \cmark\\
+14 & 0.3099 & \texttt{129.250.3.232} & Osaka, Japón & false & \cmark\\
+15 & 0.3081 & \texttt{61.200.80.218} & Osaka, Japón & false & \cmark\\
+16 & null & null & null & null \\
+17 & null & null & null & null \\
+18 & null & null & null & null \\
+19 & 0.3251 & \texttt{154.34.240.254} & Tokyo, Japón & false & \cmark\\
+20 & 0.3226 & \texttt{210.152.135.178} & Tokyo, Japón & false & \cmark\\
 \end{tabular}
 \caption{Tabla de resultados para la Universidad de Tokyo.}
 \label{tabla1}

@@ -1,8 +1,9 @@
 pandaconqueso@QUESO:~/repos/TP_Redes_Wiretapping/TP2: Rutas en Internet$ sudo python3 traceroute.py www.uni-lj.si 100 30
+[sudo] password for pandaconqueso: 
 WARNING: No route found for IPv6 destination :: (no default route?). This affects only IPv6
 [
   {
-    "rtt": 0.0024203856786092124,
+    "rtt": 0.005760351816813151,
     "ip_address": "192.168.10.1",
     "salto_intercontinental": false,
     "hop_num": 1
@@ -10,15 +11,15 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Buenos Aires, Argentina
   },
   {
-    "rtt": 0.008040275573730469,
+    "rtt": 0.004727878570556641,
     "ip_address": "192.168.0.1",
-    "salto_intercontinental": true,
+    "salto_intercontinental": false,
     "hop_num": 2
 
     Buenos Aires, Argentina
   },
   {
-    "rtt": 0.027068614959716797,
+    "rtt": 0.02693478684676321,
     "ip_address": "10.31.0.1",
     "salto_intercontinental": true,
     "hop_num": 3
@@ -26,7 +27,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Buenos Aires, Argentina
   },
   {
-    "rtt": 0.013652653694152831,
+    "rtt": 0.016697497367858888,
     "ip_address": "10.242.2.133",
     "salto_intercontinental": false,
     "hop_num": 4
@@ -34,7 +35,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Buenos Aires, Argentina
   },
   {
-    "rtt": 0.015070207118988037,
+    "rtt": 0.015507066249847412,
     "ip_address": "195.22.220.33",
     "salto_intercontinental": false,
     "hop_num": 5
@@ -42,7 +43,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Buenos Aires, Argentina / Italia
   },
   {
-    "rtt": 0.016770603656768798,
+    "rtt": 0.02479156494140625,
     "ip_address": "195.22.220.32",
     "salto_intercontinental": false,
     "hop_num": 6
@@ -50,7 +51,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Buenos Aires, Argentina / Italia
   },
   {
-    "rtt": 0.24880278825759888,
+    "rtt": 0.25313496828079224,
     "ip_address": "195.22.215.162",
     "salto_intercontinental": true,
     "hop_num": 7
@@ -58,7 +59,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Viena, Austria / Italia
   },
   {
-    "rtt": 0.2495393656721019,
+    "rtt": 0.26100012063980105,
     "ip_address": "195.22.215.199",
     "salto_intercontinental": false,
     "hop_num": 8
@@ -66,7 +67,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Viena, Austria / Italia
   },
   {
-    "rtt": 0.27526735175739636,
+    "rtt": 0.38406392900567304,
     "ip_address": "77.94.128.25",
     "salto_intercontinental": true,
     "hop_num": 9
@@ -74,15 +75,15 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Trzin, Eslovenia
   },
   {
-    "rtt": 0.3386223499591534,
+    "rtt": 0.398231104016304,
     "ip_address": "77.94.139.211",
-    "salto_intercontinental": true,
+    "salto_intercontinental": false,
     "hop_num": 10
 
     Trzin, Eslovenia
   },
   {
-    "rtt": 0.30200295338685484,
+    "rtt": 0.37075865983963013,
     "ip_address": "91.216.54.245",
     "salto_intercontinental": false,
     "hop_num": 11
@@ -90,7 +91,7 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Nova Gorica, Eslovenia
   },
   {
-    "rtt": 0.2598112201690674,
+    "rtt": 0.2604352784156799,
     "ip_address": "91.223.115.153",
     "salto_intercontinental": false,
     "hop_num": 12
@@ -98,3 +99,4 @@ WARNING: No route found for IPv6 destination :: (no default route?). This affect
     Nova Gorica, Eslovenia
   }
 ]
+

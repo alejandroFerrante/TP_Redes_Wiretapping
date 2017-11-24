@@ -21,12 +21,12 @@ Los saltos Buenos Aires-Ashburn, Ashburn-Londres y Singapur-Ghana son detectados
 Calculamos las siguientes métricas de acuerdo a lo observado en la tabla \ref{tabla2}:
 
 \begin{itemize}
-	\item Porcentaje de saltos que no responden: 25,00\%
-	\item Largo de la ruta de saltos que responden: 15 saltos 
+	\item Porcentaje de saltos que no responden: 0\%
+	\item Largo de la ruta de saltos que responden: 19 saltos 
 	\item Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 4
-	\item Cantidad de outliers: 12
-	\item Falsos positivos: 9
-	\item Falsos negativos: 0
+	\item Cantidad de outliers: 3
+	\item Falsos positivos: 1
+	\item Falsos negativos: 2
 \end{itemize}
 
 \begin{figure}[H]
@@ -34,26 +34,25 @@ Calculamos las siguientes métricas de acuerdo a lo observado en la tabla \ref{t
 \begin{tabular}{l | l | l | l | c | c}
 Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \hline
-1 & 0.0231 & 192.168.0.1 & Buenos Aires, Argentina & true & \xmark\\
-2 & null & null & null & null\\
-3 & null & null & null & null\\
-4 & null & null & null & null\\
-5 & null & null & null & null\\
-6 & null & null & null & null\\
-7 & 0.2930 & \texttt{200.89.165.130} & Buenos Aires, Argentina & true & \xmark\\
-8 & 0.1588 & \texttt{200.89.165.222} & Buenos Aires, Argentina & true & \xmark\\
-9 & 0.1693 & \texttt{185.70.203.32} & Buenos Aires, Argentina & true & \xmark\\
-10 & 0.2927 & \texttt{195.22.199.185} & Ashburn, EEUU & true & \cmark\\
-11 & 0.1995 & \texttt{216.6.87.202} & Ashburn, EEUU & true & \xmark\\
-12 & 0.6590 & \texttt{216.6.87.105} & Londres, Inglaterra & true & \cmark\\
-13 & 0.3755 & \texttt{80.231.130.130} & Londres, Inglaterra & true & \xmark\\
-14 & 0.4624 & \texttt{80.231.76.85} & Londres, Inglaterra & false & \cmark\\
-15 & 1.0908 & \texttt{195.219.195.42} & Singapur/Inglaterra? & true & \cmark\\
-16 & 0.3648 & \texttt{41.204.60.149} & Kumasi, Ghana & true & \cmark\\
-17 & 0.4641 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
-18 & 0.3928 & \texttt{197.255.127.6} & Accra, Ghana & true & \xmark\\
-19 & 0.7883 & \texttt{197.255.127.35} & Accra, Ghana & true & \xmark\\
-20 & 0.4128 & \texttt{197.255.125.213} & Accra, Ghana & true & \xmark\\
+1 & 0.0021 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
+2 & 0.0060 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
+3 & 0.0167 & \texttt{10.31.0.1} & Buenos Aires, Argentina & false & \cmark\\
+4 & 0.0141 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
+5 & 0.0133 & \texttt{195.22.220.33} & Buenos Aires, Argentina & false & \cmark\\
+6 & 0.0147 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
+7 & 0.1584 & \texttt{195.22.199.191} & Ashburn, EEUU & true & \cmark\\
+8 & 0.1714 & \texttt{216.6.87.202} & Ashburn, EEUU & false & \cmark\\
+9 & 0.2308 & \texttt{216.6.87.138} & Newark, EEUU & true & \xmark\\
+10 & 0.2228 & \texttt{216.6.57.1} & Newark, EEUU & false & \cmark\\
+11 & 0.2224 & \texttt{80.231.130.33} & Londres, Inglaterra & false & \xmark\\
+12 & 0.2251 & \texttt{80.231.130.130} & Londres, Inglaterra & false & \cmark\\
+13 & 0.2218 & \texttt{80.231.76.121} & Londres, Inglaterra & false & \cmark\\
+14 & 0.5116 & \texttt{195.219.195.42} & Singapur/Londres & true & \cmark\\
+15 & 0.3219 & \texttt{41.204.60.149} & Kumasi, Ghana & false & \xmark\\
+16 & 0.3336 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
+17 & 0.3298 & \texttt{197.255.127.6} & Accra, Ghana & false & \cmark\\
+18 & 0.3453 & \texttt{197.255.127.35} & Accra, Ghana & false & \cmark\\
+19 & 0.3393 & \texttt{197.255.125.213} & Accra, Ghana & false & \cmark\\
 \end{tabular}
 \caption{Tabla de resultados para la Universidad de Ghana.}
 \label{tabla2}
