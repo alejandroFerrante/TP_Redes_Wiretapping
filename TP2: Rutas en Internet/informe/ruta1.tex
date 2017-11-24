@@ -3,11 +3,19 @@
 Ejecutamos la herramienta usando la dirección \texttt{www.u-tokyo.ac.jp}, con ráfagas de 100 paquetes y TTL máximo igual a 30. Los resultados obtenidos se muestran en las figuras \ref{tabla1} y \ref{mapa1}. Las ubicaciones indicadas fueron obtenidas usando una página de geolocalización de IP \cite{ip2location}.
 
 \subsection{Análisis de la ruta obtenida}
-Observamos que la ruta parte de Buenoa Aires como corresponde. Luego de no obtener respuesta en varios saltos, encontramos una IP supuestamente localizada en Italia. En el salto siguiente la IP se encuentra en Brasil.
+Observamos que la ruta parte de Buenos Aires como corresponde. Luego de no obtener respuesta en varios saltos, encontramos una IP supuestamente localizada en Italia. En el salto siguiente la IP se encuentra en Brasil.
 
 Esto nos hizo sospechar acerca de la correctitud de esta ruta, ya que existen caminos directos entre Argentina y Brasil; no hay necesidad de pasar por Italia. Esto se puede ver en un mapa de cables submarinos \cite{cables}.
 
 Como vimos que varias páginas de geolocalización de IP daban resultados distintos para la misma IP, usando una página que da resultados de fuentes distintas \cite{iplocation} comparamos resultados para la IP \texttt{195.22.219.3}. Obtuvimos como resultado que casi todas las fuentes devuelven una ubicación en Italia, mientras que una devuelve la ciudad de Fortaleza, en Brasil. Observamos que el cable submarino Altantis-2 conecta entre otras ciudades Las Toninas con Fortaleza \cite{atlantis2}. Además, figura como uno de los dueños del cable la empresa Telecom Italia Sparkle, que figura como ISP en varias búsquedas que ubican esta IP en Italia. Por esto creemos que la verdadera ruta va directamente hacia Fortaleza usando el cable Atlantis-2, ya que los métodos de geolocalización de IPs no son muy confiables \cite{accuracy}, y podría ocurrir que la ubicación de una IP situada físicamente en Brasil pero vinculada a una ISP italiana sea medida incorrectamente.
+
+%%% --- termoli.gov.it ping statistics ---
+% 20 packets transmitted, 20 received, 0% packet loss, time 19021ms
+% rtt min/avg/max/mdev = 261.904/263.962/269.693/2.443 ms
+
+% --- ceara.com.br ping statistics ---
+% 20 packets transmitted, 20 received, 0% packet loss, time 19005ms
+% rtt min/avg/max/mdev = 190.340/191.632/196.599/1.958 ms
 
 Luego la ruta sigue por San Pablo, y luego salta hasta Nueva York. En este caso mirando el mapa \cite{cables} vemos que se usa el cable Seabras-1, que une estas dos ciudades \cite{seabras1}.
 

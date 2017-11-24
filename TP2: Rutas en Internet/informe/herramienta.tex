@@ -5,10 +5,8 @@ Para cada TTL entre 1 y el máximo se envían \texttt{burst\_size} paquetes con 
 
 A partir de los paquetes recibidos como respuesta de un TTL se obtiene una IP (la más común de entre los hosts que respondieron) y un RTT (el promedio de RTT para la IP elegida). Si no se recibe ninguna respuesta, ambos son nulos. Elegimos promediar sólo los RTT de los saltos con la IP elegida y no todos porque esto es más consistente con la elección.
 
-Una vez procesados los envíos, empieza el análisis para predecir los saltos intercontinentales. Usamos como datos las diferencias de los RTT promedio entre cada salto y su anterior inmediato que no sea nulo. El primer salto no nulo tiene diferencia igual a su RTT promedio. Elegimos estos valores como datos a analizar porque esperamos que los saltos intercontinentales tarden más tiempo que los que no lo son, entonces un outlier para estos datos es un posible salto intercontinental.
+Una vez procesados los envíos, empieza el análisis para predecir los saltos intercontinentales. Aplicamos el método de Cimbala para obtener los outliers, que serán los saltos intercontinentales predichos. Los datos a analizar son las diferencias de RTT en cada salto con el salto anterior no nulo. 
 
-Separamos los datos entre los saltos nulos (y con salto intercontinental, pero todavía no hay ninguno) y los demás saltos, que van a participar como datos válidos para encontrar a los outliers.
+Los saltos con menor RTT que el inmediatamente anterior tienen una diferencia negativa, y decidimos ignorarlos en el análisis ya que no representan magnitudes reales.
 
-Aplicamos el método de Cimbala: iterativamente calculamos $\tau$, la media y la desviación estándar de las diferencias de RTT, y chequeamos si el salto con mayor distancia a la media es un outlier. Si es un outlier, lo marcamos como que es un salto intercontinental, lo movemos con los otros datos y seguimos. Sino, de acuerdo al método ya terminamos.
-
-Finalmente volvemos a juntar los datos y los devolvemos por la salida estándar.
+%% podemos mandarle el pseudocodigo de cimbala o no ... no se P:
