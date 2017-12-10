@@ -27,28 +27,29 @@ En la tabla \ref{tabla3} vemos que la mayoría de los saltos están bien predich
 
 \begin{figure}[H]
 \centering
-\begin{tabular}{l | l | l | l | c | c}
-Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
+\begin{tabular}{l | l | c | l | l | c | c}
+Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \hline
-1 & 0.0057 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
-2 & 0.0047 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
-3 & 0.0269 & \texttt{10.31.0.1} & Buenos Aires, Argentina & true & \xmark\\
-4 & 0.0166 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
-5 & 0.0155 & \texttt{195.22.220.33} & Buenos Aires & false & \cmark\\
-6 & 0.0247 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
-7 & 0.2531 & \texttt{195.22.215.162} & Viena, Austria & true & \cmark\\
-8 & 0.2610 & \texttt{195.22.215.199} & Viena, Austria & false & \cmark\\
-9 & 0.3840 & \texttt{77.94.128.25} & Trzin, Eslovenia & true & \cmark\\
-10 & 0.3982 & \texttt{77.94.139.211} & Trzin, Eslovenia & false & \cmark\\
-11 & 0.3707 & \texttt{91.216.54.245} & Nova Gorica, Eslovenia & false & \cmark\\
-12 & 0.2604 & \texttt{91.223.115.153} & Nova Gorica, Eslovenia & false & \cmark\\
+1 & 0.0057 & 0.0057 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
+2 & 0.0047 & < 0 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
+3 & 0.0269 & 0.0222 & \texttt{10.31.0.1} & Buenos Aires, Argentina & true & \xmark\\
+4 & 0.0166 & < 0 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
+5 & 0.0155 & < 0 & \texttt{195.22.220.33} & Buenos Aires & false & \cmark\\
+6 & 0.0247 & 0.0092 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
+7 & 0.2531 & 0.2284 & \texttt{195.22.215.162} & Viena, Austria & true & \cmark\\
+8 & 0.2610 & 0.0079 & \texttt{195.22.215.199} & Viena, Austria & false & \cmark\\
+9 & 0.3840 & 0.123 & \texttt{77.94.128.25} & Trzin, Eslovenia & true & \cmark\\
+10 & 0.3982 & 0.0142 & \texttt{77.94.139.211} & Trzin, Eslovenia & false & \cmark\\
+11 & 0.3707 & < 0 & \texttt{91.216.54.245} & Nova Gorica, Eslovenia & false & \cmark\\
+12 & 0.2604 & < 0 & \texttt{91.223.115.153} & Nova Gorica, Eslovenia & false & \cmark\\
 \end{tabular}
 \caption{Tabla de resultados para la Universidad de Ljubljana.}
 \label{tabla3}
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{ljubljana.png}
+\centering
+\includegraphics[width=0.7\textwidth]{ljubljana.png}
 \caption{Mapa de resultados para la Universidad de Ljubljana.}
 \label{mapa3}
 \end{figure}

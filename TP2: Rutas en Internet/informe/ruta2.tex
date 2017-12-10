@@ -31,28 +31,28 @@ Calculamos las siguientes métricas de acuerdo a lo observado en la tabla \ref{t
 
 \begin{figure}[H]
 \centering
-\begin{tabular}{l | l | l | l | c | c}
-Hop & RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
+\begin{tabular}{l | l | c | l | l | c | c}
+Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \hline
-1 & 0.0021 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
-2 & 0.0060 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
-3 & 0.0167 & \texttt{10.31.0.1} & Buenos Aires, Argentina & false & \cmark\\
-4 & 0.0141 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
-5 & 0.0133 & \texttt{195.22.220.33} & Buenos Aires, Argentina & false & \cmark\\
-6 & 0.0147 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
-7 & 0.1584 & \texttt{195.22.199.191} & Ashburn, EEUU & true & \cmark\\
-8 & 0.1714 & \texttt{216.6.87.202} & Ashburn, EEUU & false & \cmark\\
-9 & 0.2308 & \texttt{216.6.87.138} & Newark, EEUU & true & \xmark\\
-10 & 0.2228 & \texttt{216.6.57.1} & Newark, EEUU & false & \cmark\\
-11 & 0.2224 & \texttt{80.231.130.33} & Londres, Inglaterra & false & \xmark\\
-12 & 0.2251 & \texttt{80.231.130.130} & Londres, Inglaterra & false & \cmark\\
-13 & 0.2218 & \texttt{80.231.76.121} & Londres, Inglaterra & false & \cmark\\
-14 & 0.5116 & \texttt{195.219.195.42} & Singapur/Londres & true & \cmark\\
-15 & 0.3219 & \texttt{41.204.60.149} & Kumasi, Ghana & false & \xmark\\
-16 & 0.3336 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
-17 & 0.3298 & \texttt{197.255.127.6} & Accra, Ghana & false & \cmark\\
-18 & 0.3453 & \texttt{197.255.127.35} & Accra, Ghana & false & \cmark\\
-19 & 0.3393 & \texttt{197.255.125.213} & Accra, Ghana & false & \cmark\\
+1 & 0.0021 & 0.0021 & \texttt{192.168.10.1} & Buenos Aires, Argentina & false & \cmark\\
+2 & 0.0060 & 0.0039 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
+3 & 0.0167 & 0.0107 & \texttt{10.31.0.1} & Buenos Aires, Argentina & false & \cmark\\
+4 & 0.0141 & < 0 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
+5 & 0.0133 & < 0 & \texttt{195.22.220.33} & Buenos Aires, Argentina & false & \cmark\\
+6 & 0.0147 & 0.0014 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
+7 & 0.1584 & 0.1437 & \texttt{195.22.199.191} & Ashburn, EEUU & true & \cmark\\
+8 & 0.1714 & 0.013 & \texttt{216.6.87.202} & Ashburn, EEUU & false & \cmark\\
+9 & 0.2308 & 0.0594 & \texttt{216.6.87.138} & Newark, EEUU & true & \xmark\\
+10 & 0.2228 & < 0 & \texttt{216.6.57.1} & Newark, EEUU & false & \cmark\\
+11 & 0.2224 & < 0 & \texttt{80.231.130.33} & Londres, Inglaterra & false & \xmark\\
+12 & 0.2251 & 0.0027 & \texttt{80.231.130.130} & Londres, Inglaterra & false & \cmark\\
+13 & 0.2218 & < 0 & \texttt{80.231.76.121} & Londres, Inglaterra & false & \cmark\\
+14 & 0.5116 & 0.2898 & \texttt{195.219.195.42} & Singapur/Londres & true & \cmark\\
+15 & 0.3219 & < 0 & \texttt{41.204.60.149} & Kumasi, Ghana & false & \xmark\\
+16 & 0.3336 & 0.0117 & \texttt{41.204.60.150} & Kumasi, Ghana & false & \cmark\\
+17 & 0.3298 & < 0 & \texttt{197.255.127.6} & Accra, Ghana & false & \cmark\\
+18 & 0.3453 & 0.0155 & \texttt{197.255.127.35} & Accra, Ghana & false & \cmark\\
+19 & 0.3393 & < 0 & \texttt{197.255.125.213} & Accra, Ghana & false & \cmark\\
 \end{tabular}
 \caption{Tabla de resultados para la Universidad de Ghana.}
 \label{tabla2}
