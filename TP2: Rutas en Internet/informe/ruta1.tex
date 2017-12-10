@@ -21,7 +21,7 @@ Luego la ruta salta de San Pablo a Nueva York. En este caso mirando el mapa \cit
 
 Siguiendo por Estados Unidos, la ruta pasa por Seattle y salta hasta Osaka, en Japón. Esto es posible si se usa el cable Pacific Crossing-1, que entre otras ciudades une Shima, Japón (cercana a Osaka) con la zona de Seattle \cite{pc1}.
 
-Finalmente, luego de algunos saltos sin respuesta, se llega al destino en Tokyo.
+Finalmente, después de algunos saltos sin respuesta, se llega al destino en Tokyo.
 
 \subsection{Análisis de las predicciones de salto intercontinental}
 
@@ -72,7 +72,7 @@ Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa1}
 \end{figure}
 
-En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 16, pero a la vez el mayor salto negativo se da en el salto 17. De esto deducimos que probablemente haya varios saltos posibles en esta zona, y la ruta elegida por la herramienta es una mezcla de alguna de estas. Esto ocurre cuando los paquetes están en Japón. El resto de los puntos no muestran una tendencia definida (ni creciente ni decreciente).
+En la figura \ref{diff1} vemos los 3 outliers y las diferencias de RTT entre saltos. También se muestran las diferencias negativas, que no fueron tenidas en cuenta al usar el método de Cimbala.
 
 \begin{figure}[H]
 \centering
@@ -81,7 +81,7 @@ En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 
 \label{diff1}
 \end{figure}
 
-De la figura \ref{sdev1} vemos que los puntos están muy dispersos, lejos del 0 de $x$ (que representa el promedio). Por eso el método de Cimbala resultó con muchos outliers.
+De la figura \ref{sdev1} vemos que los puntos más alejados son los correspondientes a los outliers. Esto era lo esperado ya que el método de Cimbala compara la distancia a la media con la desviación estándar, y si esta resulta grande (con el criterio de $\tau$) el punto es considerado un outlier.
 
 \begin{figure}[H]
 \centering
@@ -90,13 +90,17 @@ De la figura \ref{sdev1} vemos que los puntos están muy dispersos, lejos del 0 
 \label{sdev1}
 \end{figure}
 
-Atribuimos los falsos positivos en Argentina a la diferencia de la velocidad de conexión con el resto del mundo. De acuerdo al reporte del estado de internet de Akamai \cite{akamai} nuestro país tiene baja velocidad promedio de internet, como se muestra en la figura \ref{speed}. Como estamos usando los RTT para calcular los saltos, no podemos saber si un RTT entre saltos más grande se debe a mayor distancia o a menor velocidad. Esto posibilita los falsos positivos.
+Observamos que los errores en la identificación de saltos están uno detrás de otro, en los saltos 8, 9 y 10. Esto podría deberse a que quizás la parte de la ruta que está en Brasil no está bien geolocalizada, porque no parece ser óptimo ir hacia el norte hasta Fortaleza para luego bajar a San Pablo, cuando hay otros caminos posibles según el mapa de cables submarinos \cite{cables}.
 
-En cuanto a Japón, vemos en la figura \ref{speed} que su velocidad de conexión es mucho más alta que el promedio. Pero como fue mencionado antes, en esa zona probablemente haya rutas alternativas internas y el criterio elegido puede mezclarlas entre sí, causando falsos positivos.
+El falso positivo del salto número 10 podría ser causa de la lejanía entre Nueva York y Seattle, lo cual puede generar un RTT comparable al de un salto entre continentes.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{speed.png}
-\caption{Velocidades promedio de internet en el mundo.}
-\label{speed}
-\end{figure}
+% Atribuimos los falsos positivos en Argentina a la diferencia de la velocidad de conexión con el resto del mundo. De acuerdo al reporte del estado de internet de Akamai \cite{akamai} nuestro país tiene baja velocidad promedio de internet, como se muestra en la figura \ref{speed}. Como estamos usando los RTT para calcular los saltos, no podemos saber si un RTT entre saltos más grande se debe a mayor distancia o a menor velocidad. Esto posibilita los falsos positivos.
+
+% En cuanto a Japón, vemos en la figura \ref{speed} que su velocidad de conexión es mucho más alta que el promedio. Pero como fue mencionado antes, en esa zona probablemente haya rutas alternativas internas y el criterio elegido puede mezclarlas entre sí, causando falsos positivos.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.7\textwidth]{speed.png}
+% \caption{Velocidades promedio de internet en el mundo.}
+% \label{speed}
+% \end{figure}
