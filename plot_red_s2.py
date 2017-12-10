@@ -4,6 +4,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_agraph import write_dot
 
+colors = ['deeppink', 'red', 'darkorange', 'gold', 'yellowgreen', 'cornflowerblue', 'darkorchid']
+
 # red 1
 # destacados = ['10.251.21.236',
 # '10.251.21.216',
@@ -66,13 +68,16 @@ G = nx.DiGraph()
 # G.add_nodes_from(nodes)
 for n in nodes:
 	if n in destacados:
-		G.add_node(n, color='red')
+		G.add_node(n, color=colors[destacados.index(n)])
 	else:
 		G.add_node(n)
+
+c = 0
 for ip1, ip2 in mensajes:
 	if ip1 in destacados:
 		if mensajes[(ip1, ip2)][0] > 0 or mensajes[(ip1, ip2)][1] > 0: 
-			G.add_edge(ip1, ip2, label=str(mensajes[(ip1, ip2)][0]) + ' / ' + str(mensajes[(ip1, ip2)][1]) , color='red')
+			c = colors[destacados.index(ip1)]
+			G.add_edge(ip1, ip2, label=str(mensajes[(ip1, ip2)][0]) + ' / ' + str(mensajes[(ip1, ip2)][1]) , color=c)
 	else:
 		if mensajes[(ip1, ip2)][0] > 0 or mensajes[(ip1, ip2)][1] > 0:
 			G.add_edge(ip1, ip2, label=str(mensajes[(ip1, ip2)][0]) + ' / ' + str(mensajes[(ip1, ip2)][1]))
