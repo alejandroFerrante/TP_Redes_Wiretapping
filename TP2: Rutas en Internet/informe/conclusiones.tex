@@ -1,9 +1,5 @@
 \section{Conclusiones}
 
-No vimos falsos negativos. En general hay outliers de más, no de menos. 
+En general los resultados obtenidos fueron correctos. Se predijeron correctamente 43 de 51 saltos; hubo 5 falsos positivos y 3 falsos negativos en total.
 
-Este método no es muy efectivo porque las velocidades de internet en cada país no son las mismas, y eso no es tenido en cuenta.
-
-Además, el hecho de que en cada envío los paquetes puedan tomar una ruta diferente hace que los experimentos devuelvan resultados con muchos outliers y datos inconsistentes.
-
-Por otra parte, el analisis de las IPs visitadas era razonable, aunque el camino elegido no siempre fuera el más ``intuitivo''. Sin embargo, varios de los resultados que obtuvimos nos llevan a la conclusión de que tampoco son datos certeros.
+La mayoría de los errores de predicción sucedieron por problemas con la geolocalización de las IPs, aunque algunos parecen estar causados por la decisión de ignorar los valores negativos de diferencia de RTT entre saltos. También es posible que haya caminos alternativos que no puedan verse claramente mediante este análisis, ya que tomamos el promedio de RTT de la IP más frecuente en cada salto.

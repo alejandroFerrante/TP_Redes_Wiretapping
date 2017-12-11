@@ -6,9 +6,9 @@ Realizamos un gráfico de la ruta obtenida usando una página de geolocalizació
 
 \subsection{Análisis de la ruta obtenida}
 
-Los paquetes hacen varios saltos en Buenos Aires (aunque algunos no responden podemos suponer que son en Buenos Aires), luego de lo cual hay un salto de Buenos Aires a Viena. Esto es anormal, ya que el único cable submarino que conecta Argentina y Europa llega a Portugal, el Atlantis-2 \cite{atlantis2}. Usando otras fuentes para geolocalización de IP vemos que la IP \texttt{185.70.203.22} del salto 8 podría en realidad estar localizada en Italia. Al igual que en la primera ruta creemos que esto se debe a la utilización del mismo cable Atlantis-2, y que esa IP podría estar en Portugal.
+Los paquetes hacen varios saltos en Buenos Aires (aunque algunos no responden podemos suponer que son en Buenos Aires), luego de lo cual hay un salto de Buenos Aires a Viena. Esto es anormal, ya que el único cable submarino que conecta Argentina y Europa llega a Portugal, el Atlantis-2 \cite{atlantis2}. Usando otras fuentes para geolocalización de IP vemos que la IP \texttt{195.22.215.162} del salto 8 podría en realidad estar localizada en Italia. Al igual que en la primera ruta creemos que esto se debe a la utilización del mismo cable Atlantis-2, y que esa IP podría estar en Portugal. Lo mismo sucede con la IP \texttt{195.22.215.199} del salto 9.
 
-Luego hay algunos saltos más en Europa hasta llegar a destino. Hay un solo salto intercontinental en el mapa, que es el salto Buenos Aires-Viena (o bien Buenos Aires-Portugal), este salto es detectado correctamente, pero al igual que en experimentos anteriores hay muchos falsos positivos.
+Luego hay algunos saltos más en Europa hasta llegar a destino. Hay un solo salto intercontinental en el mapa, que es el salto Buenos Aires-Viena (o bien Buenos Aires-Portugal), este salto es detectado correctamente.
 
 Observamos que el destino final de los paquetes no es la ciudad de Ljubljana, sino Nova Gorica que se encuentra a aproximadamente 100 kilómetros. Es posible que los servidores de la universidad se encuentren allí.
 
@@ -19,9 +19,9 @@ En la tabla \ref{tabla3} vemos que la mayoría de los saltos están bien predich
 \begin{itemize}
 	\item Porcentaje de saltos que no responden: 0\%
 	\item Largo de la ruta de saltos que responden: 12 saltos 
-	\item Cantidad de enlaces intercontinentales (separando América del Sur/Norte): 1
+	\item Cantidad de enlaces intercontinentales: 1
 	\item Cantidad de outliers: 3
-	\item Falsos positivos: 1
+	\item Falsos positivos: 2
 	\item Falsos negativos: 0
 \end{itemize}
 
@@ -34,11 +34,11 @@ Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 2 & 0.0047 & < 0 & \texttt{192.168.0.1} & Buenos Aires, Argentina & false & \cmark\\
 3 & 0.0269 & 0.0222 & \texttt{10.31.0.1} & Buenos Aires, Argentina & true & \xmark\\
 4 & 0.0166 & < 0 & \texttt{10.242.2.133} & Buenos Aires, Argentina & false & \cmark\\
-5 & 0.0155 & < 0 & \texttt{195.22.220.33} & Buenos Aires & false & \cmark\\
+5 & 0.0155 & < 0 & \texttt{195.22.220.33} & Buenos Aires, Argentina & false & \cmark\\
 6 & 0.0247 & 0.0092 & \texttt{195.22.220.32} & Buenos Aires, Argentina & false & \cmark\\
 7 & 0.2531 & 0.2284 & \texttt{195.22.215.162} & Viena, Austria & true & \cmark\\
 8 & 0.2610 & 0.0079 & \texttt{195.22.215.199} & Viena, Austria & false & \cmark\\
-9 & 0.3840 & 0.123 & \texttt{77.94.128.25} & Trzin, Eslovenia & true & \cmark\\
+9 & 0.3840 & 0.123 & \texttt{77.94.128.25} & Trzin, Eslovenia & true & \xmark\\
 10 & 0.3982 & 0.0142 & \texttt{77.94.139.211} & Trzin, Eslovenia & false & \cmark\\
 11 & 0.3707 & < 0 & \texttt{91.216.54.245} & Nova Gorica, Eslovenia & false & \cmark\\
 12 & 0.2604 & < 0 & \texttt{91.223.115.153} & Nova Gorica, Eslovenia & false & \cmark\\
@@ -47,6 +47,8 @@ Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{tabla3}
 \end{figure}
 
+El falso positivo del salto 9 puede estar ocasionado por errores de geolocalización en los saltos 7 y 8 que son sospechosos.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{ljubljana.png}
@@ -54,7 +56,7 @@ Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa3}
 \end{figure}
 
-En la figura \ref{diff3} vemos las diferencias de RTT por cada par de saltos. Observamos que algunos valores son negativos y que parece haber un máximo en el salto 7.
+En la figura \ref{diff3} vemos las diferencias de RTT por cada par de saltos. Observamos los tres outliers y en particular vemos que el falso positivo del salto 3, dentro de Buenos Aires, es muy cercano en valor a los puntos que no son outliers.
 
 \begin{figure}[H]
 \centering
@@ -63,7 +65,7 @@ En la figura \ref{diff3} vemos las diferencias de RTT por cada par de saltos. Ob
 \label{diff3}
 \end{figure}
 
-En la figura \ref{sdev3} observamos una dispersión muy grande de los puntos, lo que coincide con la gran cantidad de outliers encontrada.
+En la figura \ref{sdev3} observamos nuevamente los tres outliers y su separación respecto al resto de los puntos.
 
 \begin{figure}[H]
 \centering

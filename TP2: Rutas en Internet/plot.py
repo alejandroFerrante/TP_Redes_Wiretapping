@@ -77,8 +77,8 @@ for u in rtt:
 
 	hops = saltos[u]
 
-	for i in range(len(hops)):
-		hops[i] -= 0.5
+	# for i in range(len(hops)):
+	# 	hops[i] -= 0.5
 
 	hops_out = list()
 	hops_in = list()
@@ -101,7 +101,7 @@ for u in rtt:
 	plt.xlabel("Salto")
 	plt.ylabel("Diferencia de RTT con el salto anterior")
 	plt.grid(True)
-	plt.xticks(np.arange(min(hops)-0.5, max(hops)+1.5, 1.0))
+	plt.xticks(np.arange(min(hops), max(hops)+1, 1.0))
 	plt.legend()
 	plt.savefig(u+'1.png', bbox_inches='tight', dpi=200)
 	# plt.show()

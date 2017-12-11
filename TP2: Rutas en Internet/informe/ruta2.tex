@@ -10,11 +10,9 @@ La ruta parte de Buenos Aires, que es consistente ya que los paquetes fueron env
 
 Hay un salto hacia Estados Unidos, es posible que se utilice esta ruta a pesar de haber una más corta (según el mapa de cables subacuáticos \cite{cables}) porque al ser más utilizadas las comunicaciones entre Argentina y América del Norte (particularmente Estados Unidos) que con África, es posible que los paquetes vayan más rápido por esa ruta.
 
-Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envío por una ruta muy larga. De todas formas buscamos otras fuentes y vimos que la IP \texttt{195.219.195.42} podría estar ubicada en Inglaterra.
+Luego hace un salto a Londres, que sería el segundo salto intercontinental. Siguiente, hace un salto a Singapur, que podría pensarse que se trata de un error de geolocalización. Sin embargo, el RTT es consistente con un envío por una ruta muy larga. De todas formas buscamos otras fuentes y vimos que la IP \texttt{195.219.195.42} podría estar ubicada en Inglaterra. Si el salto es efectivamente hacia Singapur, el cable utilizado probablemente es el SEA-ME-WE3 \cite{seamewe}, que une entre muchos otros países estos dos. Por otra parte, hay dos cables que unen Inglaterra con Ghana: el WACS \cite{wacs} y el GLO-1 \cite{glo1}.
 
 Luego los paquetes realizan varios saltos en Ghana hasta llegar a destino. 
-
-Los saltos Buenos Aires-Ashburn y Singapur/Londres-Ghana son detectados correctamente. A la vez, hay muchos falsos positivos, en el caso del salto Londres-Singapur es entendible porque es un salto con un RTT muy alto, en los otros casos, pensamos que podría deberse a la aparición de RTTs con diferencia negativa con el salto anterior, que hacen que la detección de outliers sea peor.
 
 \subsection{Análisis de las predicciones de salto intercontinental}
 
@@ -64,8 +62,9 @@ Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa2}
 \end{figure}
 
-En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 15, esto tiene sentido porque es el salto que va a Singapur. Aunque el siguiente salto es un salto con menor RTT, por lo que la herramienta no siempre debe estar tomando este salto. El resto de los puntos no muestran una tendencia definida (ni creciente ni decreciente).
+Los saltos Buenos Aires-Ashburn y Singapur/Londres-Ghana son detectados correctamente. Los falsos negativos de los saltos 11 y 15 se deben a que su diferencia de RTT con el salto anterior es negativa, y como decidimos ignorar esos puntos, no fueron tenidos en cuenta al buscar outliers aplicando Cimbala. El falso positivo del salto 9 podría deberse a un problema de localización, ya que su RTT es más parecido a los posteriores que son de Inglaterra que a los anteriores que son de EEUU.
 
+En la figura \ref{diff2} se puede ver que la mayor diferencia se da en el salto 14, esto tiene sentido porque es el salto que va a Singapur. El siguiente salto tiene menor RTT, por lo que suponemos que quizás hay caminos alternativos que no se pueden apreciar con este análisis. El resto de los puntos que no son outliers se muestran muy lejanos a estos dos.
 
 \begin{figure}[H]
 \centering
@@ -74,7 +73,7 @@ En la figura \ref{diff1} se puede ver que la mayor diferencia se da en el salto 
 \label{diff2}
 \end{figure}
 
-De la figura \ref{sdev2} vemos que también hay varios puntos están muy dispersos y por eso este experimento también devolvió muchos outliers como resultado.
+De la figura \ref{sdev2} vemos que los tres outliers encontrados están muy lejos del $(0, 0)$, por lo que el método de Cimbala los identificó correctamente. También se ve abajo a la izquierda el ``outlier negativo'' causado por el valor de RTT del salto hacia Singapur.
 
 \begin{figure}[H]
 \centering

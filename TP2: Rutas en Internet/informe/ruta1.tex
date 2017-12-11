@@ -9,14 +9,6 @@ Esto nos hizo sospechar acerca de la correctitud de esta ruta, ya que existen ca
 
 Como vimos que varias páginas de geolocalización de IP daban resultados distintos para la misma IP, usando una página que da resultados de fuentes distintas \cite{iplocation} comparamos resultados para la IP \texttt{195.22.219.17}. Obtuvimos como resultado que casi todas las fuentes devuelven una ubicación en Italia, mientras que una devuelve la ciudad de Fortaleza, en Brasil. Observamos que el cable submarino Altantis-2 conecta entre otras ciudades Las Toninas con Fortaleza \cite{atlantis2}. Además, figura como uno de los dueños del cable la empresa Telecom Italia Sparkle, que figura como ISP en varias búsquedas que ubican esta IP en Italia. Por esto creemos que la verdadera ruta va directamente hacia Fortaleza usando el cable Atlantis-2, ya que los métodos de geolocalización de IPs no son muy confiables \cite{accuracy}, y podría ocurrir que la ubicación de una IP situada físicamente en Brasil pero vinculada a una ISP italiana sea medida incorrectamente.
 
-%%% --- termoli.gov.it ping statistics ---
-% 20 packets transmitted, 20 received, 0% packet loss, time 19021ms
-% rtt min/avg/max/mdev = 261.904/263.962/269.693/2.443 ms
-
-% --- ceara.com.br ping statistics ---
-% 20 packets transmitted, 20 received, 0% packet loss, time 19005ms
-% rtt min/avg/max/mdev = 190.340/191.632/196.599/1.958 ms
-
 Luego la ruta salta de San Pablo a Nueva York. En este caso mirando el mapa \cite{cables} vemos que se usa el cable Seabras-1, que une estas dos ciudades \cite{seabras1}.
 
 Siguiendo por Estados Unidos, la ruta pasa por Seattle y salta hasta Osaka, en Japón. Esto es posible si se usa el cable Pacific Crossing-1, que entre otras ciudades une Shima, Japón (cercana a Osaka) con la zona de Seattle \cite{pc1}.
@@ -72,6 +64,10 @@ Hop & RTT & Dif. de RTT & IP & Ubicación & Predicción de SI & ¿correcto?\\
 \label{mapa1}
 \end{figure}
 
+Observamos que los errores en la identificación de saltos están uno detrás de otro, en los saltos 8, 9 y 10. Esto podría deberse a que quizás la parte de la ruta que está en Brasil no está bien geolocalizada, porque no parece ser óptimo ir hacia el norte hasta Fortaleza para luego bajar a San Pablo, cuando hay otros caminos posibles según el mapa de cables submarinos \cite{cables}.
+
+El falso positivo del salto número 10 podría ser causa de la lejanía entre Nueva York y Seattle, lo cual puede generar un RTT comparable al de un salto entre continentes.
+
 En la figura \ref{diff1} vemos los 3 outliers y las diferencias de RTT entre saltos. También se muestran las diferencias negativas, que no fueron tenidas en cuenta al usar el método de Cimbala.
 
 \begin{figure}[H]
@@ -89,18 +85,3 @@ De la figura \ref{sdev1} vemos que los puntos más alejados son los correspondie
 \caption{Gráfico de $\frac{X_i - \bar{X}}{S}$ en función de las diferencias de RTT.}
 \label{sdev1}
 \end{figure}
-
-Observamos que los errores en la identificación de saltos están uno detrás de otro, en los saltos 8, 9 y 10. Esto podría deberse a que quizás la parte de la ruta que está en Brasil no está bien geolocalizada, porque no parece ser óptimo ir hacia el norte hasta Fortaleza para luego bajar a San Pablo, cuando hay otros caminos posibles según el mapa de cables submarinos \cite{cables}.
-
-El falso positivo del salto número 10 podría ser causa de la lejanía entre Nueva York y Seattle, lo cual puede generar un RTT comparable al de un salto entre continentes.
-
-% Atribuimos los falsos positivos en Argentina a la diferencia de la velocidad de conexión con el resto del mundo. De acuerdo al reporte del estado de internet de Akamai \cite{akamai} nuestro país tiene baja velocidad promedio de internet, como se muestra en la figura \ref{speed}. Como estamos usando los RTT para calcular los saltos, no podemos saber si un RTT entre saltos más grande se debe a mayor distancia o a menor velocidad. Esto posibilita los falsos positivos.
-
-% En cuanto a Japón, vemos en la figura \ref{speed} que su velocidad de conexión es mucho más alta que el promedio. Pero como fue mencionado antes, en esa zona probablemente haya rutas alternativas internas y el criterio elegido puede mezclarlas entre sí, causando falsos positivos.
-
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=0.7\textwidth]{speed.png}
-% \caption{Velocidades promedio de internet en el mundo.}
-% \label{speed}
-% \end{figure}
