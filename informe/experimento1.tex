@@ -2,15 +2,14 @@
 
 \subsection{Descripción del contexto}
 
-El experimento fue realizado en una red de FibertelZone, por medio de una conexión Wi-Fi en un local de Starbucks de Corrientes y Malabia. Dentro de la red se encuentran conectadas aproximadamente 10 notebooks y muchos celulares, además del router. La fecha de captura es Lunes 9 de Octubre de 2017.
+El primer experimento fue realizado en una red inalambrica abierta de FibertelZone, por medio de una conexión Wi-Fi en una sucursal de la cadena Starbucks (ubicada en Avenida Corrientes esquina Malabia, en la ciudad autonoma de Buenos Aires, Republica Argentina) el dia Lunes 9 de Octubre de 2017. 
+Al momento de comenzar las mediciones, se observo que dentro de la red se encontraban conectadas 10 notebooks y varios dispositivos mobiles (se estima uno por persona) , además del router propio del local. Considerando aproximadadmente 30 personas en el lugar contamos con 41 dispositivos conectados. 
 
 \subsection{Descripción de la captura}
 
-Capturamos 12000 paquetes. En la figura~\ref{protocolos1} se muestra la distribución de los protocolos en la red. Observamos que la mayoría de los paquetes son de tipo IPv4, otros son de tipo \texttt{0x86dd} (IPv6) y la minoría son de ARP.
-
-Los paquetes de tipo IPv4 e IPv6 usan distintas versiones del protocolo IP. Los paquetes de tipo ARP son los usados por los hosts de una red para obtener direcciones MAC de otros dispositivos, a partir de su IP.
-
-Esto es consistente, ya que la mayoría de los dispositivos usan IPv4/IPv6 para conectarse a Internet, y el porcentaje de paquetes ARP es considerable al haber muchos dispositivos conectados al mismo tiempo.
+La captura resulto en un total de 12000 paquetes. La figura~\ref{protocolos1} muestar la distribucion de los protocolos de los paquetes capturados. Se puede ver claramente que la mayoria de los paquetes son de tipo Ipv4, mientras que en menor medida encontramos paquetes de tipo Ipv6 (0x86dd) y un menor porcentaje de paquetes ARP. 
+Los dos primeros son distintas versiones del protocolo Ip (nivel de redes dentro del modelo OSI), mientras que el ultimo es un protocolo utilizado por los dispositivos para llenar su tabla de drecciones MAC, ya que cada dispositivo necesita para mandar correctamente un paquete cual es la direccion local (MAC) correspondiente a una direccion Ip. 
+Resulta esperable que la mayoria de los paquetes sean del protocolo Ip, ya que es el utilizado para el intercambio de datos. Sin embargo, consideramos tambien (comparativamente) relevante la cantidad de paquetes ARP, lo cual atribuimos a la gran cantidad de dispositivos conectados en la red analizada.
 
 \begin{figure}[H]
 \centering
@@ -19,7 +18,8 @@ Esto es consistente, ya que la mayoría de los dispositivos usan IPv4/IPv6 para 
 \label{protocolos1}
 \end{figure}
 
-En la figura~\ref{broadcast1} podemos ver el porcentaje de paquetes broadcast comparado con el total de paquetes. Vemos que esto representa un 16\% del total. En la figura~\ref{entropias1_1} vemos que los protocolos que aparecen en los paquetes de broadcast son ARP e IPv4. En cuanto a ARP, estos paquetes son los del tipo who-is, que mediante broadcast llegan al nodo cuya IP busca el emisor. 
+En la figura~\ref{broadcast1} comparamos el porcentaje de paquetes broadcast contra el porcentaje de paquetes unicast. Un paquete bradcast es aquel cuya direccion destino tiene un valor especial, el cual al ser recibido siempre se considera correspondiente ( a diferencia de un paquete unicast donde sera considerado correspondiente cuando la direccion destino coincida con la propia). En este caso observamos que los paquetes broadcast representan el 16% del total.
+Como muestra la figura~\ref{entropias1_1}, los protocolos con mensajes broadcast son Ipv4 y ARP, siendo estos ultimos del tipo who-has. Este tipo de mensaje corresponde a un pedido dirigido a todos en la red solicitando la direccion MAC de una Ip determinada.
 
 \begin{figure}[H]
 \centering
@@ -30,9 +30,13 @@ En la figura~\ref{broadcast1} podemos ver el porcentaje de paquetes broadcast co
 
 \subsection{Análisis de la captura}
 
-Realizamos el modelado de la fuente $S_1$ según el enunciado. En la figura~\ref{entropias1_1} se encuentra el gráfico de la información de cada símbolo. Cuanta más información tenga un símbolo, quiere decir que es menos probable que aparezca. En esta red particular el símbolo con más información es representado por los paquetes unicast de tipo ARP. Estos paquetes son los is-at, las respuestas a los who-has. Tiene sentido ya que mientras que el request de ARP se hace mediante broadcast (o sea, mandando muchos paquetes), el reply es unicast (menos paquetes).
+El modelado de la fuente S1 fue realizado siguiendo las especificaciones de la consigna.
+En la figura 3 se puede observar que separamos a los paquetes por su protocolo y por si son broadcast o unicast y calculamos su informacion. Incluimos tambien la entropia maxima y la entropia muestral.
+La probabilidad de aparicion de un simbolo es inversamente proporcional a su informacion.
+Para esta captura particular el símbolo con más información es representado por los paquetes unicast de tipo ARP. Estos paquetes son los is-at ( las respuestas a los who-has). 
 
-Además vemos que la entropía muestral es más de la mitad de la entropía máxima, esto es así porque la información de los distintos símbolos es comparable. El símbolo con más información (ARP, unicast) tiene aproximadamente 10 veces la información del menor (IPv4, unicast). La entropía máxima se alcanzaría si la información de todos los símbolos fuese la misma.
+El símbolo con más información (ARP unicast) tiene aproximadamente 10
+veces la información del menor (IPv4 unicast). Notese que  segun la teoria de la informacion, la entropía máxima se alcanza cuando la información de todos los símbolos es la misma.
 
 \begin{figure}[H]
 \centering
@@ -41,9 +45,10 @@ Además vemos que la entropía muestral es más de la mitad de la entropía máx
 \label{entropias1_1}
 \end{figure}
 
-El análisis usando el modelado de la fuente $S_2$ (explicado anteriormente) se puede ver en la figura~\ref{entropias2_1}. En este caso vemos que los símbolos de la fuente podrían dividirse en 2 o 3 grupos de acuerdo a su información. Se observan algunos puntos distinguidos, en particular las 8 IPs con información menor a la entropía de $S_2$. Estas son las IPs que más requests de ARP hicieron. 
+El análisis usando el modelado de la fuente S2 (explicado anteriormente) se puede ver en la figura 4. En este caso notamos que los símbolos de la fuente podrían dividirse en 2 o 3 grupos de acuerdo a su información. 
+Se observan algunos puntos distinguidos, en particular las 8 IPs con información menor a la entropía de S2. Estas son las IPs que más requests ARP hicieron. 
 
-La entropía muestral es aproximadamente $\frac{4}{5}$ de la máxima. Es alta ya que hay muchos símbolos con valores parecidos de información; la máxima se alcanzaría con equiprobabilidad.
+La entropía muestral es aproximadamente 4/5 de la máxima. Encontramos que este nivel se debe a la presencia de varios símbolos con valores de información similares (nuevamente, la máxima entropia se alcanza con equiprobabilidad).
 
 \begin{figure}[H]
 \centering
@@ -52,7 +57,13 @@ La entropía muestral es aproximadamente $\frac{4}{5}$ de la máxima. Es alta ya
 \label{entropias2_1}
 \end{figure}
 
-Por último graficamos la red subyacente de mensajes ARP, en la figura~\ref{grafo1}. Cada nodo del grafo representa una IP interviniente en al menos un mensaje ARP de la red, y cada eje orientado representa que la primera IP envió al menos un mensaje a la segunda. No estamos distinguiendo entre paquetes de tipo who-has o is-at. Podemos ver que el nodo central se comunica separadamente con muchos otros nodos, por lo que creemos que es el router del Stabucks.
+Por último graficamos la red subyacente de mensajes ARP representandola en la figura 5. 
+Cada nodo del grafo representa una IP interviniente en al menos un mensaje ARP de la red, y cada eje orientado representa que un nodo (con su correspondiente Ip) envió al menos un mensaje con Ip destino correspondiente al nodo apuntado, sin distinguir entre paquetes de tipo who-has o is-at.
+
+Dada esta representacion, es importante leer correctamente el grafico, ya que los nodos con mayor grado no son necesariamente los de mayor probabilidad. 
+Dada una Ip origen, puede haber un caso en que mande una gran cantidad de mensajes a unas pocas direcciones destino (recordar que en esta fuente se cuentan la cantidad de mensajes enviados osea las aristas que salen de cada nodo). 
+Como este grafo no posee peso en las aristas, estos intercambios resultarian en un nodo con pocas aristas, mientras que otro intercambio de mensajes donde una ip destino manda comparativamente menos paquetes pero a una mayor cantidad de IPs distintas, resultara en un nodo con muchas mas aristas.
+Teniendo en cuenta esto podemos notar que igualmente las direcciones con menor informacion (osea mayor probabilidad ) resultan las de mayor grado en el grafo.
 
 \begin{figure}[H]
 \centering

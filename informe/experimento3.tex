@@ -28,7 +28,9 @@ Este comportamiento es similar al del segundo experimento, ya que ambas son rede
 
 \subsection{Análisis de la captura}
 
-En la figura~\ref{entropias1_4} se muestra la información de cada símbolo de la fuente $S_1$. Hay un símbolo con mucha menor información que los demás (IPv4, unicast), se debe a que la mayoría de los paquetes fueron de este tipo. A causa de esto, la entropía de la fuente es muy baja, está muy lejos del máximo, porque hay grandes diferencias entre el símbolo de menor información y los demás.
+En la figura~\ref{entropias1_4} se muestra la información de cada símbolo de la fuente S1. 
+Hay un símbolo con mucha menor información que los demás (IPv4 unicast), lo cual se debe a que la mayoría de los paquetes fueron de este tipo. 
+A causa de esto, la entropía de la fuente es muy baja y está muy lejos del máximo, debido a que hay grandes diferencias entre el símbolo de menor información y los demás.
 
 \begin{figure}[H]
 \centering
@@ -37,7 +39,8 @@ En la figura~\ref{entropias1_4} se muestra la información de cada símbolo de l
 \label{entropias1_4}
 \end{figure}
 
-En cuanto a la fuente $S_2$, vemos en la figura ~\ref{entropias2_4} que sólo hay dos símbolos. La red es tan chica que hay solo dos IPs que realizaron request de ARP. La entropía muestral está cerca de $\frac{1}{2}$, la mitad que la entropía máxima.
+En cuanto a la fuente $S_2$, vemos en la figura 14 que sólo hay dos símbolos correspondientes a las dos direcciones IP que realizan requests ARP. Atribuimos esto a lo reducida que es la red. 
+La entropía muestral está cerca de 1/2 , la mitad que la entropía máxima.
 
 \begin{figure}[H]
 \centering
@@ -46,7 +49,9 @@ En cuanto a la fuente $S_2$, vemos en la figura ~\ref{entropias2_4} que sólo ha
 \label{entropias2_4}
 \end{figure}
 
-Por último graficamos la red subyacente de mensajes ARP, al igual que en los otros dos experimentos. Observamos que el grafo no es conexo, y no podemos identificar al router. Esto es consistente con el hecho de que no se midieron muchos paquetes ARP en total en esta red.
+Por último representamos los envios ARP dentro de la red durante el periodo monitoreado, al igual que en los otros dos experimentos. 
+Notese que aqui se representan tanto los requests ARP como sus respuestas, por lo que aparecen aqui cuatro nodos a diferencia de las dos direcciones que aparecen com simbolos de la fuente. 
+Al ser una muestra sobre una red tan pequeña este grafo no muestra muchos mas aspectos relevantes para el analisis.
 
 \begin{figure}[H]
 \centering
