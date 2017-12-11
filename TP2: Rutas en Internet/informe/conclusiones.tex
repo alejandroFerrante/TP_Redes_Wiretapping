@@ -1,5 +1,8 @@
 \section{Conclusiones}
 
-En general los resultados obtenidos fueron correctos. Se predijeron correctamente 43 de 51 saltos; hubo 5 falsos positivos y 3 falsos negativos en total.
+En general los resultados obtenidos fueron correctos. Se predijeron correctamente 43 de 51 saltos; hubo 5 falsos positivos y 3 falsos negativos en total. 
 
-La mayoría de los errores de predicción sucedieron por problemas con la geolocalización de las IPs, aunque algunos parecen estar causados por la decisión de ignorar los valores negativos de diferencia de RTT entre saltos. También es posible que haya caminos alternativos que no puedan verse claramente mediante este análisis, ya que tomamos el promedio de RTT de la IP más frecuente en cada salto.
+La mayoría de los errores de predicción sucedieron por problemas con la geolocalización de las IPs, aunque algunos parecen estar causados por la decisión de ignorar los valores negativos de diferencia de RTT entre saltos. También es posible que haya caminos alternativos que no puedan verse claramente mediante este análisis, ya que tomamos el promedio de RTT de la IP más frecuente en cada salto. Un ejemplo de esto es el salto hacia Singapur en la ruta de Ghana.
+
+Concluimos entonces que el método de Cimbala resulta efectivo para detectar los outliers, y los errores son introducidos o bien por problemas de geolocalización o bien por decisiones en el diseño. Para mejorar la herramienta deberíamos plantear otra forma de manejar las diferencias de RTT negativas.
+
