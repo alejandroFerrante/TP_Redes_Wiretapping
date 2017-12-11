@@ -7,31 +7,31 @@ from networkx.drawing.nx_agraph import write_dot
 colors = ['deeppink', 'red', 'darkorange', 'gold', 'yellowgreen', 'cornflowerblue', 'darkorchid']
 
 # red 1
-# destacados = ['10.251.21.236',
-# '10.251.21.216',
-# '0.0.0.0',
-# '10.251.21.1',
-# '10.251.21.213',
-# '10.251.21.240',
-# '10.251.21.209']
+destacados = ['10.251.21.236',
+'10.251.21.216',
+'0.0.0.0',
+'10.251.21.1',
+'10.251.21.213',
+'10.251.21.240',
+'10.251.21.209']
 
 # red 2
 # destacados = ['192.168.0.2',
 # '192.168.0.1']
 
 # red 3
-destacados = ['192.168.250.1']
+# destacados = ['192.168.250.1']
 
 ARP_type = 2054
 
 def dict_add_req(dic, key):
     if key in dic:
-        dic[key][1] += 1
+        dic[key][0] += 1
     else:
         dic[key] = [1, 0]
 def dict_add_rep(dic, key):
 	if key in dic:
-		dic[key][0] += 1
+		dic[key][1] += 1
 	else:
 		dic[key] = [0, 1]
 
@@ -58,6 +58,8 @@ for p in packets:
 			# dict_add(mensajes, (p.psrc, p.pdst))
 			nodes.add(p.psrc)
 			nodes.add(p.pdst)
+
+print(mensajes)
 
 # for ip in broadcast_src:
 # 	for n in nodes:

@@ -39,6 +39,8 @@ for pkt in packets:
 			dict_add(S2_dict, pkt.psrc)
 			paquetes_S2 += 1
 
+print(S2_dict)
+
 x = list()
 y_normal = list()
 y_destacados = list()
@@ -71,5 +73,5 @@ plt.axhline(y=entropia_max, color='r', linestyle='-', label='Entropía máxima')
 plt.ylabel('Información')
 plt.xlabel('Símbolo')
 plt.legend()
-plt.savefig('entropiaS2Red4.png', bbox_inches='tight', dpi=200)
-# plt.show()
+# plt.savefig('entropiaS2Red4.png', bbox_inches='tight', dpi=200)
+plt.show()
